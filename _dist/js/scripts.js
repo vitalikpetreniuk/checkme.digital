@@ -15,23 +15,23 @@ $('.main-menu__item_parent > a').on('click', function(e) {
 	$(this).parent().find('.main-submenu').toggleClass('_active');
 })
 
-$(document).mouseup(function (e) {
-	//Назва контейнеру
-	let container = $('.main-submenu');
-	//Умова, щоб працювало тільки коли попап відкритий
-	if ($('.main-submenu').hasClass('_active')) {
-		//Умови при яких спрацює функція
-			//Якщо клікають не на посилання
-		if (!$("a").is(e.target)
-			//Якщо клік не на вікно попапу
-			&& !container.is(e.target)
-			//Якщо клік ......
-			&& container.has(e.target).length === 0) {
-			//Імітує клік на вказаний елемент
-			$('.main-submenu').removeClass('_active');
-		}
-	}
-});
+// $(document).mouseup(function (e) {
+// 	//Назва контейнеру
+// 	let container = $('.main-submenu');
+// 	//Умова, щоб працювало тільки коли попап відкритий
+// 	if ($('.main-submenu').hasClass('_active')) {
+// 		//Умови при яких спрацює функція
+// 			//Якщо клікають не на посилання
+// 		if (!$("a").is(e.target)
+// 			//Якщо клік не на вікно попапу
+// 			&& !container.is(e.target)
+// 			//Якщо клік ......
+// 			&& container.has(e.target).length === 0) {
+// 			//Імітує клік на вказаний елемент
+// 			$('.main-submenu').removeClass('_active');
+// 		}
+// 	}
+// });
 
 $('.language-toggle__current').on('click', function () {
 	
