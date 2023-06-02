@@ -39,23 +39,23 @@ $('.language-toggle__current').on('click', function () {
 	$('.language-toggle__list').slideToggle();
 })
 
-$(document).mouseup(function (e) {
-	//Назва контейнеру
-	let container = $('.language-toggle__list');
-	//Умова, щоб працювало тільки коли попап відкритий
-	if ($('.language-toggle__current').hasClass('_active')) {
-		//Умови при яких спрацює функція
-			//Якщо клікають не на посилання
-		if (!$("a").is(e.target)
-			//Якщо клік не на вікно попапу
-			&& !container.is(e.target)
-			//Якщо клік ......
-			&& container.has(e.target).length === 0) {
-			//Імітує клік на вказаний елемент
-			$('.language-toggle__current').trigger('click');
-		}
-	}
-});
+// $(document).mouseup(function (e) {
+// 	//Назва контейнеру
+// 	let container = $('.language-toggle__list');
+// 	//Умова, щоб працювало тільки коли попап відкритий
+// 	if ($('.language-toggle__current').hasClass('_active')) {
+// 		//Умови при яких спрацює функція
+// 			//Якщо клікають не на посилання
+// 		if (!$("a").is(e.target)
+// 			//Якщо клік не на вікно попапу
+// 			&& !container.is(e.target)
+// 			//Якщо клік ......
+// 			&& container.has(e.target).length === 0) {
+// 			//Імітує клік на вказаний елемент
+// 			$('.language-toggle__current').trigger('click');
+// 		}
+// 	}
+// });
 
 $('.header__burger').on('click', function() {
 	$(this).toggleClass('_active');

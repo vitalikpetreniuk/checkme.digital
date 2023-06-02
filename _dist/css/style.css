@@ -1496,6 +1496,10 @@ h2 {
   padding-bottom: 45px;
 }
 
+.innovators__top {
+  margin-bottom: 40px;
+}
+
 .ticker-innovators__wrapper {
   height: 90px;
 }
@@ -2050,7 +2054,6 @@ h2 {
 
 .item-services__inbox_submit {
   width: 100%;
-  text-align: center;
   margin-top: 20px;
   padding: 0;
   border-bottom: none;
@@ -2850,6 +2853,10 @@ h2 {
     display: flex;
   }
 
+  .header__btn {
+    display: none;
+  }
+
   .main-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2874,6 +2881,10 @@ h2 {
 
   .main-menu__item_parent._active {
     padding-bottom: 310px;
+  }
+
+  .language-toggle {
+    margin-bottom: 30px;
   }
 }
 
