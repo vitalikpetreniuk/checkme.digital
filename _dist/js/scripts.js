@@ -134,9 +134,9 @@ flickity = new Flickity(slideshowEl, {
 flickity.x = 0;
 
 // slideshowEl.addEventListener('mouseenter', pause, false);
-//slideshowEl.addEventListener('focusin', pause, false);
+// slideshowEl.addEventListener('focusin', pause, false);
 slideshowEl.addEventListener('mouseleave', play, false);
-//slideshowEl.addEventListener('focusout', play, false);
+slideshowEl.addEventListener('focusout', play, false);
 
 flickity.on('dragStart', () => {
   isPaused = true;

@@ -944,6 +944,7 @@ h2 {
 .partners-footer {
 	display: flex;
 	align-items: flex-end;
+	justify-content: space-around;
 	gap: 8px;
 
 	// .partners-footer__ibox
@@ -3098,4 +3099,9 @@ h2 {
 .flickity-slider,
 .flickity-viewport {
 	height: 100%!important;
+}
+
+.ticker-innovators__wrapper {
+	outline: none;
+	border: none;
 }

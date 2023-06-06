@@ -905,6 +905,8 @@ h2 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   gap: 8px;
 }
 
@@ -2796,6 +2798,11 @@ h2 {
 .flickity-slider,
 .flickity-viewport {
   height: 100% !important;
+}
+
+.ticker-innovators__wrapper {
+  outline: none;
+  border: none;
 }
 
 @media (max-width: 1024px) {
