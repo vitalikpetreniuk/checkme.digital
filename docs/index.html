@@ -154,18 +154,20 @@
 
 	<main class="main">
 		<aside class="side-links">
-			<a class="side-links__item" href="#">
-				<img src='img/content/aside-01.svg' alt=''>
-			</a>
-			<a class="side-links__item" href="#">
-				<img src='img/content/aside-02.svg' alt=''>
-			</a>
-			<a class="side-links__item" href="#">
-				<img src='img/content/aside-03.svg' alt=''>
-			</a>
-			<a class="side-links__item" href="#">
-				<img src='img/content/aside-04.svg' alt=''>
-			</a>
+			<ul class="side-links__list">
+				<li class="side-links__item" data-link="book">
+					<img src='img/content/aside-01.svg' alt=''>
+				</li>
+				<li class="side-links__item" data-link="comment">
+					<img src='img/content/aside-02.svg' alt=''>
+				</li>
+				<li class="side-links__item" data-link="faq">
+					<img src='img/content/aside-03.svg' alt=''>
+				</li>
+			</ul>
+			<a class="side-links__link side-links__link_book" href="#">Book my session</a>
+			<a class="side-links__link side-links__link_comment" href="#">Lorem Ipsum</a>
+			<a class="side-links__link side-links__link_faq" href="#">FAQ</a>
 		</aside>
 		<section class="content">
 			<div class="content__cont _cont">
@@ -2685,7 +2687,7 @@
 			</div>
 		</section>
 	</main>
-
+	
 	<footer class="footer">
 	<div class='footer__cont _cont'>
 		<div class="footer__top">
@@ -2814,6 +2816,7 @@
 
 	<script src="libs/jquery.js"></script>
 	<script src="libs/marquee-ticker.js"></script>
+	<script src="libs/flickity.js"></script>
 	<script src="libs/swiper-bundle.min.js"></script>
 	<script src="js/scripts.min.js"></script>
 </body>

@@ -105,15 +105,50 @@ $('.lvl-evolution').on('click', function() {
 	$(this).find('.lvl-overlay').toggleClass('_active');
 })
 
-$('.ticker-innovators').marquee({
-	mask: null,
-	line: '.ticker-innovators__wrapper',
-	items: '>*',
-	animSpeed: 40,
-	pauseOnHover: false,
-	direction: 'left',
-	initialDelay: 0,
+// $('.ticker-innovators').marquee({
+// 	mask: null,
+// 	line: '.ticker-innovators__wrapper',
+// 	items: '>*',
+// 	animSpeed: 40,
+// 	pauseOnHover: false,
+// 	direction: 'left',
+// 	initialDelay: 0,
+// });
+
+
+
+let tickerSpeed = 0.5;
+const slideshowEl = document.querySelector('.ticker-innovators__wrapper');
+
+let flickity=null;let isPaused=false;const update=()=>{isPaused||(flickity.slides&&(flickity.x=(flickity.x-tickerSpeed)%flickity.slideableWidth,flickity.selectedIndex=flickity.dragEndRestingSelect(),flickity.updateSelectedSlide(),flickity.settle(flickity.x)),window.requestAnimationFrame(update))},pause=()=>{isPaused=!0},play=()=>{isPaused&&(isPaused=!1,window.requestAnimationFrame(update))};
+
+flickity = new Flickity(slideshowEl, {
+	autoPlay: false,
+	prevNextButtons: false,
+	pageDots: false,
+	draggable: true,
+	wrapAround: true,
+	selectedAttraction: 0.015,
+	friction: 0.25
 });
+flickity.x = 0;
+
+// slideshowEl.addEventListener('mouseenter', pause, false);
+//slideshowEl.addEventListener('focusin', pause, false);
+slideshowEl.addEventListener('mouseleave', play, false);
+//slideshowEl.addEventListener('focusout', play, false);
+
+flickity.on('dragStart', () => {
+  isPaused = true;
+});
+
+update();
+
+
+
+
+
+
 
 if($('.swiper').length) {
 
@@ -213,10 +248,16 @@ $('.ticker-instruments__line').marquee({
 	initialDelay: 0,
 });
 
-$('.toggle-serve__center button').on('click', function() {
+$('.toggle-serve').on('click', function() {
 	
-	$('.toggle-serve').toggleClass('_active');
+	$(this).toggleClass('_active');
 	$('.lvl-serve_partner').toggleClass('_active');
+})
+
+$('.side-links__item').on('click', function() {
+	
+	$('.side-links__link').not('.side-links__link_' + $(this).data('link')).removeClass('_active');
+	$('.side-links__link_' + $(this).data('link')).toggleClass('_active');
 })
 
 })

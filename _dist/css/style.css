@@ -298,6 +298,10 @@ h2 {
   position: fixed;
   bottom: 15%;
   right: 0;
+  z-index: 100;
+}
+
+.side-links__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -305,11 +309,13 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   gap: 20px;
   background: #fff;
   padding: 15px 9px;
   border-radius: 12px 0 0 12px;
-  z-index: 100;
 }
 
 .side-links__item {
@@ -324,6 +330,49 @@ h2 {
      object-fit: contain;
 }
 
+.side-links__link {
+  position: absolute;
+  right: -10px;
+  padding: 14px 64px 14px 24px;
+  background: #F0F0F0;
+  border-radius: 12px 0 0 12px;
+  font: 700 16px/1.18 "Proxima";
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  z-index: -1;
+}
+
+.side-links__link._active {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.side-links__link_book {
+  top: 0;
+  background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
+  background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
+}
+
+.side-links__link_comment {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #EB5D2D;
+}
+
+.side-links__link_faq {
+  bottom: 0;
+  color: #EB5D2D;
+}
+
 .intro__subtitle {
   font: 700 14px/1.21 "Proxima";
   color: #6A6A6A;
@@ -334,6 +383,7 @@ h2 {
 .intro__title {
   font: 700 20px/1.15 "Raleway";
   margin-bottom: 7px;
+  max-width: 335px;
 }
 
 .intro__title strong {
@@ -2743,6 +2793,11 @@ h2 {
   margin-top: 15px;
 }
 
+.flickity-slider,
+.flickity-viewport {
+  height: 100% !important;
+}
+
 @media (max-width: 1024px) {
   .info-content__welcome {
     font-size: 12px;
@@ -2771,6 +2826,12 @@ h2 {
 }
 
 @media (max-width: 992px) {
+  .header {
+    background: rgba(17, 21, 28, 0.7);
+    -webkit-backdrop-filter: blur(3.5px);
+            backdrop-filter: blur(3.5px);
+  }
+
   .header__cont {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -2787,10 +2848,10 @@ h2 {
 
   .header__content {
     position: fixed;
-    top: -100%;
+    top: -100vh;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
