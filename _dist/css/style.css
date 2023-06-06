@@ -301,6 +301,28 @@ h2 {
   z-index: 100;
 }
 
+.side-links._left {
+  right: initial;
+  left: 0;
+  bottom: 30%;
+}
+
+.side-links._left .side-links__list {
+  border-radius: 0 12px 12px 0;
+}
+
+.side-links._left .side-links__link {
+  right: initial;
+  left: -10px;
+  padding: 14px 24px 14px 64px;
+  border-radius: 0 12px 12px 0;
+}
+
+.side-links._left .side-links__link._active {
+  right: initial;
+  left: 0;
+}
+
 .side-links__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1119,7 +1141,7 @@ h2 {
 .info-content__link {
   display: inline-block;
   position: relative;
-  font: 700 14px/1.21 "Raleway";
+  font: 700 14px/1.21 "Proxima";
   text-transform: uppercase;
   background: -o-linear-gradient(177.76deg, #e1007a 11.77%, #f19300 100%);
   background: linear-gradient(272.24deg, #e1007a 11.77%, #f19300 100%);
@@ -2864,8 +2886,7 @@ h2 {
         -ms-flex-direction: column;
             flex-direction: column;
     background: #000;
-    padding-top: 120px;
-    padding-bottom: 20px;
+    padding: 120px 7px 20px 42px;
     gap: 50px;
     overflow-y: auto;
     overflow-x: hidden;

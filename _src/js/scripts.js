@@ -60,6 +60,7 @@ $('.language-toggle__current').on('click', function () {
 $('.header__burger').on('click', function() {
 	$(this).toggleClass('_active');
 	$('.header__content').toggleClass('_active');
+	$('.side-links').toggleClass('_left');
 	$('body').toggleClass('_lock');
 })
 
@@ -105,18 +106,6 @@ $('.lvl-evolution').on('click', function() {
 	$(this).find('.lvl-overlay').toggleClass('_active');
 })
 
-// $('.ticker-innovators').marquee({
-// 	mask: null,
-// 	line: '.ticker-innovators__wrapper',
-// 	items: '>*',
-// 	animSpeed: 40,
-// 	pauseOnHover: false,
-// 	direction: 'left',
-// 	initialDelay: 0,
-// });
-
-
-
 let tickerSpeed = 0.5;
 const slideshowEl = document.querySelector('.ticker-innovators__wrapper');
 
@@ -143,12 +132,6 @@ flickity.on('dragStart', () => {
 });
 
 update();
-
-
-
-
-
-
 
 if($('.swiper').length) {
 
@@ -259,5 +242,23 @@ $('.side-links__item').on('click', function() {
 	$('.side-links__link').not('.side-links__link_' + $(this).data('link')).removeClass('_active');
 	$('.side-links__link_' + $(this).data('link')).toggleClass('_active');
 })
+
+$(document).mouseup(function (e) {
+	//Назва контейнеру
+	let container = $('.side-links');
+	//Умова, щоб працювало тільки коли попап відкритий
+	if ($('.side-links__link').hasClass('_active')) {
+		//Умови при яких спрацює функція
+			//Якщо клікають не на посилання
+		if (!$("a").is(e.target)
+			//Якщо клік не на вікно попапу
+			&& !container.is(e.target)
+			//Якщо клік ......
+			&& container.has(e.target).length === 0) {
+			//Імітує клік на вказаний елемент
+			$('.side-links__link').removeClass('_active');
+		}
+	}
+});
 
 })
