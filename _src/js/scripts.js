@@ -1,12 +1,12 @@
 var $ = jQuery;
 
 $(function() {
-		
-$('.ticker').marquee({
-	line: '.ticker__wrapper',
-	animSpeed: 50,
-	pauseOnHover: false,
-});
+
+// $('.ticker').marquee({
+// 	line: '.ticker__wrapper',
+// 	animSpeed: 50,
+// 	pauseOnHover: false,
+// });
 
 $('.main-menu__item_parent > a').on('click', function(e) {
 	e.preventDefault();
