@@ -155,14 +155,14 @@ $('.team-tabs__link').on('click', function(e) {
 	$(this).parents('.team-tabs').find($('.team-tabs__content' + $(this).attr('href'))).addClass('_active');
 })
 
-$.each($('.item-consult__inbox, .item-services__inbox, .item-how-work__inbox'), function() {
+$.each($('.item-consult__inbox, .item-services__inbox, .item-how-work__inbox, .owner-form__inbox'), function() {
 
 	if($(this).find('input').prop('checked') == true) {
 		$(this).addClass('_active');
 	}
 })
 
-$(document).on('click', '.item-consult__inbox, .item-services__inbox, .item-how-work__inbox', function() {
+$(document).on('click', '.item-consult__inbox:not(.item-consult__inbox_submit), .item-services__inbox:not(.item-services__inbox_submit), .item-how-work__inbox:not(.item-how-work__inbox_submit), .owner-form__inbox:not(.owner-form__inbox_submit)', function() {
 	
 	if($(this).hasClass('_active')) {
 
@@ -260,5 +260,10 @@ $(document).mouseup(function (e) {
 		}
 	}
 });
+
+$('.owner-evolution__overlay').on('click', function() {
+	
+	$(this).addClass('_hide');
+})
 
 })
