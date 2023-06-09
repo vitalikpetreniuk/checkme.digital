@@ -231,11 +231,29 @@ $('.ticker-instruments__line').marquee({
 	initialDelay: 0,
 });
 
+let question;
+let answer;
+
 $('.toggle-serve').on('click', function() {
-	
 	$(this).toggleClass('_active');
-	$('.lvl-serve_partner').toggleClass('_active');
-})
+	
+	question = $('.serve__slide[data-state=question]');
+	answer = $('.serve__slide[data-state=answer]');
+	
+	if (question.attr('data-state') == 'question') {
+
+		question.attr('data-state', 'answer');
+	} else if (answer.attr('data-state') == 'answer') {
+
+		answer.removeAttr('data-state');
+		if (answer.next().length) {
+			answer.next().attr('data-state', 'question');
+		} else {
+			$('.serve__info .serve__slide:first-child').attr('data-state', 'question');
+		}
+		
+	}
+});
 
 $('.side-links__item').on('click', function() {
 	
