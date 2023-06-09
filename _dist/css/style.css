@@ -3306,6 +3306,12 @@ h2 {
     max-width: 768px;
   }
 
+  .serve__wrapper {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+
   .toggle-serve {
     height: 290px;
   }
@@ -3349,6 +3355,7 @@ h2 {
 
   .lvl-serve_partner {
     text-align: right;
+    margin-bottom: 40px;
   }
 
   .lvl-serve__name {
@@ -3969,6 +3976,72 @@ h2 {
     width: calc(25% - 30px);
   }
 
+  .serve__box {
+    max-width: 1025px;
+  }
+
+  .toggle-serve._active .toggle-serve__left {
+    left: -9.5%;
+  }
+
+  .toggle-serve._active .toggle-serve__right {
+    right: -2.5%;
+  }
+
+  .toggle-serve__left {
+    top: 27%;
+    left: -12%;
+    width: 600px;
+    height: 180px;
+  }
+
+  .toggle-serve__right {
+    top: -21%;
+    right: -5%;
+    width: 523px;
+    height: 276px;
+  }
+
+  .lvl-serve {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+    padding: 42px 55px 35px;
+  }
+
+  .lvl-serve_partner .lvl-serve__name {
+    right: 55px;
+    left: initial;
+  }
+
+  .lvl-serve__name {
+    position: absolute;
+    top: 0;
+    left: 55px;
+    margin-bottom: 0;
+  }
+
+  .lvl-serve__heading {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .lvl-serve__text {
+    font-size: 14px;
+  }
+
+  .lvl-serve__ibox {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 38px;
+            flex: 0 0 38px;
+    height: 38px;
+  }
+
   .faq__cont {
     padding-top: 80px;
     padding-bottom: 150px;
@@ -4092,6 +4165,36 @@ h2 {
 
   .how-work__wrapper {
     gap: 150px;
+  }
+
+  .serve__intro {
+    margin-bottom: 50px;
+  }
+
+  .serve__box {
+    max-width: 1280px;
+  }
+
+  .toggle-serve._active .toggle-serve__left {
+    left: -7.5%;
+  }
+
+  .toggle-serve._active .toggle-serve__right {
+    right: -3.8%;
+  }
+
+  .toggle-serve__left {
+    top: 26%;
+    left: -10%;
+    width: 822px;
+    height: 190px;
+  }
+
+  .toggle-serve__right {
+    top: -32%;
+    right: -6%;
+    width: 734px;
+    height: 325px;
   }
 }
 

@@ -4433,8 +4433,14 @@ h2 {
 		padding-top: 50px;
 		padding-bottom: 60px;
 
+		// .serve__box
 		&__box {
 			max-width: 768px;
+		}
+
+		// .serve__wrapper
+		&__wrapper {
+			align-items: flex-end;
 		}
 	}
 	
@@ -4495,6 +4501,7 @@ h2 {
 		// .lvl-serve_partner
 		&_partner {
 			text-align: right;
+			margin-bottom: 40px;
 		}
 	
 		// .lvl-serve__name
@@ -4514,6 +4521,141 @@ h2 {
 		// .lvl-serve__text
 		&__text {
 			font-size: 14px;
+		}
+	}
+}
+
+@media (min-width: 1025px) {
+
+	.serve {
+
+		// .serve__box
+		&__box {
+			max-width: 1025px;
+		}
+	}
+	
+	.toggle-serve {
+	
+		// .toggle-serve._active
+		&._active {
+	
+			// .toggle-serve._active .toggle-serve__left
+			.toggle-serve__left {
+				left: -9.5%;
+			}
+	
+			// .toggle-serve._active .toggle-serve__right
+			.toggle-serve__right {
+				right: -2.5%;
+			}
+		}
+	
+		// .toggle-serve__left
+		&__left {
+			top: 27%;
+			left: -12%;
+			width: 600px;
+			height: 180px;
+		}
+	
+		// .toggle-serve__right
+		&__right {
+			top: -21%;
+			right: -5%;
+			width: 523px;
+			height: 276px;
+		}
+	}
+	
+	.lvl-serve {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		padding: 42px 55px 35px;
+	
+		// .lvl-serve_partner
+		&_partner {
+
+			.lvl-serve__name {
+				right: 55px;
+				left: initial;
+			}
+		}
+	
+		// .lvl-serve__name
+		&__name {
+			position: absolute;
+			top: 0;
+			left: 55px;
+			margin-bottom: 0;
+		}
+	
+		// .lvl-serve__heading
+		&__heading {
+			font-size: 18px;
+			margin-bottom: 8px;
+		}
+	
+		// .lvl-serve__text
+		&__text {
+			font-size: 14px;
+		}
+	
+		// .lvl-serve__ibox
+		&__ibox {
+			flex: 0 0 38px;
+			height: 38px;
+		}
+	}
+}
+
+@media (min-width: 1351px) {
+
+	.serve {
+
+		// .serve__intro
+		&__intro {
+			margin-bottom: 50px;
+		}
+
+		// .serve__box
+		&__box {
+			max-width: 1280px;
+		}
+	}
+	
+	.toggle-serve {
+	
+		// .toggle-serve._active
+		&._active {
+	
+			// .toggle-serve._active .toggle-serve__left
+			.toggle-serve__left {
+				left: -7.5%;
+			}
+	
+			// .toggle-serve._active .toggle-serve__right
+			.toggle-serve__right {
+				right: -3.8%;
+			}
+		}
+	
+		// .toggle-serve__left
+		&__left {
+			top: 26%;
+			left: -10%;
+			width: 822px;
+			height: 190px;
+		}
+	
+		// .toggle-serve__right
+		&__right {
+			top: -32%;
+			right: -6%;
+			width: 734px;
+			height: 325px;
 		}
 	}
 }
