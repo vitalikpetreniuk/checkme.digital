@@ -153,6 +153,10 @@ $('.team-tabs__link').on('click', function(e) {
 
 	$(this).parents('.team-tabs').find($('.team-tabs__content')).removeClass('_active');
 	$(this).parents('.team-tabs').find($('.team-tabs__content' + $(this).attr('href'))).addClass('_active');
+
+
+
+	// $('#team-slider').update().updateAutoHeight();
 })
 
 $.each($('.item-consult__inbox, .item-services__inbox, .item-how-work__inbox, .owner-form__inbox'), function() {
@@ -185,14 +189,16 @@ $('.consult__link').on('click', function(e) {
 	$('.item-consult' + $(this).attr('href')).addClass('_active');
 })
 
-$('.services__link').on('click', function(e) {
+$('.nav-services__link').on('click', function(e) {
 	
 	e.preventDefault();
-	$('.services__link').removeClass('_active');
+	$('.nav-services__link').removeClass('_active');
 	$(this).addClass('_active');
 
 	$('.item-services').removeClass('_active');
 	$('.item-services' + $(this).attr('href')).addClass('_active');
+
+	$('.nav-services__line span').css('width', $(this).data('line') + '%')
 })
 
 $('.work-nav__link').on('click', function(e) {
