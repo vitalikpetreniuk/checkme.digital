@@ -135,7 +135,7 @@ update();
 
 if($('.swiper').length) {
 
-	new Swiper('.swiper', {
+	var slider_team = new Swiper('.slider-team', {
 		loop: true,
 		navigation: {
 			nextEl: '.slider-team__arrow_right',
@@ -154,9 +154,7 @@ $('.team-tabs__link').on('click', function(e) {
 	$(this).parents('.team-tabs').find($('.team-tabs__content')).removeClass('_active');
 	$(this).parents('.team-tabs').find($('.team-tabs__content' + $(this).attr('href'))).addClass('_active');
 
-
-
-	// $('#team-slider').update().updateAutoHeight();
+	slider_team.updateAutoHeight();
 })
 
 $.each($('.item-consult__inbox, .item-services__inbox, .item-how-work__inbox, .owner-form__inbox'), function() {

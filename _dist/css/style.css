@@ -294,6 +294,10 @@ h2 {
   text-transform: uppercase;
 }
 
+input[type=checkbox] {
+  display: none;
+}
+
 .side-links {
   position: fixed;
   bottom: 15%;
@@ -506,7 +510,7 @@ h2 {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 116px;
           flex: 0 0 116px;
-  margin-right: 100px;
+  margin-right: 90px;
   z-index: 100;
 }
 
@@ -894,6 +898,7 @@ h2 {
   border-radius: 32px;
   background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
+  cursor: pointer;
 }
 
 .nav-footer {
@@ -1367,6 +1372,7 @@ h2 {
   width: calc(50% - 10px);
   border-radius: 10px;
   padding: 20px 15px 55px;
+  cursor: pointer;
 }
 
 .lvl-evolution__title {
@@ -1503,6 +1509,7 @@ h2 {
   border-radius: 10px;
   overflow: hidden;
   z-index: 2;
+  cursor: pointer;
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
@@ -1531,7 +1538,7 @@ h2 {
   content: "";
   position: absolute;
   top: calc(50% - 26px);
-  right: -180px;
+  right: -174px;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -1629,6 +1636,7 @@ h2 {
   width: calc(50% - 7px);
   font: 300 14px/1.21 "SF-UI";
   padding-left: 22px;
+  cursor: pointer;
 }
 
 .owner-form__inbox:not(.owner-form__inbox_submit)::before {
@@ -1667,6 +1675,7 @@ h2 {
   border-radius: 30px;
   padding: 18px 36px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .introducing__cont {
@@ -1708,6 +1717,8 @@ h2 {
 
 .ticker-innovators__wrapper {
   height: 90px;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .ticker-innovators__item {
@@ -2086,6 +2097,7 @@ h2 {
   border-radius: 30px;
   padding: 18px 36px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .item-consult__submit_dt {
@@ -2132,6 +2144,7 @@ h2 {
 
 .item-consult__inbox label {
   font: 300 14px/1.42 "SF-UI";
+  cursor: pointer;
 }
 
 .services__cont {
@@ -2208,6 +2221,7 @@ h2 {
   border-radius: 30px;
   padding: 18px 36px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .item-services__submit_dt {
@@ -2250,6 +2264,11 @@ h2 {
 
 .item-services__inbox label {
   font: 300 14px/1.42 "SF-UI";
+  cursor: pointer;
+}
+
+.item-services__inbox label input {
+  display: none;
 }
 
 .nav-services {
@@ -2475,6 +2494,7 @@ h2 {
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
   border-radius: 30px;
   padding: 18px 36px;
+  cursor: pointer;
 }
 
 .item-how-work__submit_dt {
@@ -2515,6 +2535,7 @@ h2 {
 
 .item-how-work__inbox label {
   font: 300 14px/1.42 "SF-UI";
+  cursor: pointer;
 }
 
 .work-nav {
@@ -2788,10 +2809,11 @@ h2 {
   position: relative;
   height: 155px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .toggle-serve._active .toggle-serve__left {
-  left: -84px;
+  left: -101px;
 }
 
 .toggle-serve._active .toggle-serve__center::before {
@@ -2799,13 +2821,13 @@ h2 {
 }
 
 .toggle-serve._active .toggle-serve__right {
-  right: -53px;
+  right: -70px;
 }
 
 .toggle-serve__left {
   position: absolute;
   top: 50px;
-  left: -100px;
+  left: -115px;
   width: 264px;
   height: 80px;
   -webkit-transition: all linear 0.2s;
@@ -2837,35 +2859,35 @@ h2 {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
   opacity: 0;
   -webkit-filter: blur(10px);
           filter: blur(10px);
   border-radius: 50%;
+  z-index: -1;
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
 }
 
 .toggle-serve__center button {
-  width: 21px;
-  height: 21px;
+  font: 300 14px/1.21 "Proxima";
+  text-transform: uppercase;
+  width: 54px;
+  height: 54px;
   background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
   border: 1px solid #FFFFFF;
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
   border-radius: 50%;
 }
 
 .toggle-serve__right {
   position: absolute;
   top: -12px;
-  right: -70px;
+  right: -84px;
   width: 231px;
   height: 122px;
   -webkit-transition: all linear 0.2s;
@@ -2982,6 +3004,7 @@ h2 {
 .spoiler-faq__name {
   position: relative;
   padding-right: 20px;
+  cursor: pointer;
 }
 
 .spoiler-faq__name::before {
@@ -3020,6 +3043,11 @@ h2 {
         -ms-flex-direction: row;
             flex-direction: row;
     gap: 30px;
+    padding-top: 17px;
+  }
+
+  .intro__subtitle {
+    margin-top: -20px;
   }
 
   .intro__left,
@@ -3360,16 +3388,16 @@ h2 {
   }
 
   .toggle-serve._active .toggle-serve__left {
-    left: 5%;
+    left: 4%;
   }
 
   .toggle-serve._active .toggle-serve__right {
-    right: 11%;
+    right: 9.5%;
   }
 
   .toggle-serve__left {
     top: 36%;
-    left: 2%;
+    left: 1%;
     width: 330px;
     height: 100px;
   }
@@ -3379,14 +3407,9 @@ h2 {
     height: 97px;
   }
 
-  .toggle-serve__center button {
-    width: 34px;
-    height: 34px;
-  }
-
   .toggle-serve__right {
     top: 8%;
-    right: 7%;
+    right: 6%;
     width: 288px;
     height: 152px;
   }
@@ -3436,6 +3459,11 @@ h2 {
 }
 
 @media (min-width: 993px) {
+  .side-links {
+    bottom: initial;
+    top: 125px;
+  }
+
   .cost__cont {
     padding-bottom: 90px;
   }
@@ -3526,7 +3554,7 @@ h2 {
   .intro__title {
     font-size: 34px;
     margin-bottom: 0;
-    max-width: none;
+    max-width: 570px;
   }
 
   .intro__text {
@@ -3815,7 +3843,10 @@ h2 {
   }
 
   .slider-team {
-    padding: 0;
+    padding: 40px 45px 70px;
+    background: rgba(17, 21, 28, 0.5);
+    border: 1px solid rgba(29, 32, 39, 0.2);
+    border-radius: 20px;
   }
 
   .slider-team__slide {
@@ -3830,7 +3861,12 @@ h2 {
     z-index: 10;
   }
 
+  .slider-team__arrow_left {
+    left: 0;
+  }
+
   .slider-team__arrow_right {
+    right: 0;
     -webkit-transform: rotate(180deg) translateY(50%);
         -ms-transform: rotate(180deg) translateY(50%);
             transform: rotate(180deg) translateY(50%);
@@ -4074,23 +4110,23 @@ h2 {
   }
 
   .toggle-serve._active .toggle-serve__left {
-    left: -9.5%;
+    left: -10.5%;
   }
 
   .toggle-serve._active .toggle-serve__right {
-    right: -2.5%;
+    right: -3.5%;
   }
 
   .toggle-serve__left {
     top: 27%;
-    left: -12%;
+    left: -14%;
     width: 600px;
     height: 180px;
   }
 
   .toggle-serve__right {
     top: -21%;
-    right: -5%;
+    right: -7%;
     width: 523px;
     height: 276px;
   }
@@ -4421,23 +4457,23 @@ h2 {
   }
 
   .toggle-serve._active .toggle-serve__left {
-    left: -7.5%;
+    left: -8.5%;
   }
 
   .toggle-serve._active .toggle-serve__right {
-    right: -3.8%;
+    right: -4.8%;
   }
 
   .toggle-serve__left {
     top: 26%;
-    left: -10%;
+    left: -11%;
     width: 822px;
     height: 190px;
   }
 
   .toggle-serve__right {
     top: -32%;
-    right: -6%;
+    right: -8%;
     width: 734px;
     height: 325px;
   }
