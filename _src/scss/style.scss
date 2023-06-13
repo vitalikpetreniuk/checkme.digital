@@ -2669,6 +2669,7 @@ input[type=checkbox] {
 		height: 37px;
 		background: url(../img/team/slider-arrow.svg) center/contain no-repeat;
 		transition: all linear 0.2s;
+		z-index: 10;
 
 		// .slider-team__arrow_left
 		&_left {
@@ -3057,7 +3058,6 @@ input[type=checkbox] {
 		// .slider-team__arrow
 		&__arrow {
 			top: 180px;
-			z-index: 10;
 
 			// .slider-team__arrow_left
 			&_left {
