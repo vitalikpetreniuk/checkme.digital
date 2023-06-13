@@ -15,23 +15,23 @@ $('.main-menu__item_parent > a').on('click', function(e) {
 	$(this).parent().find('.main-submenu').toggleClass('_active');
 })
 
-// $(document).mouseup(function (e) {
-// 	//Назва контейнеру
-// 	let container = $('.main-submenu');
-// 	//Умова, щоб працювало тільки коли попап відкритий
-// 	if ($('.main-submenu').hasClass('_active')) {
-// 		//Умови при яких спрацює функція
-// 			//Якщо клікають не на посилання
-// 		if (!$("a").is(e.target)
-// 			//Якщо клік не на вікно попапу
-// 			&& !container.is(e.target)
-// 			//Якщо клік ......
-// 			&& container.has(e.target).length === 0) {
-// 			//Імітує клік на вказаний елемент
-// 			$('.main-submenu').removeClass('_active');
-// 		}
-// 	}
-// });
+$(document).mouseup(function (e) {
+	//Назва контейнеру
+	let container = $('.main-submenu');
+	//Умова, щоб працювало тільки коли попап відкритий
+	if ($('.main-submenu').hasClass('_active')) {
+		//Умови при яких спрацює функція
+			//Якщо клікають не на посилання
+		if (!$("a").is(e.target)
+			//Якщо клік не на вікно попапу
+			&& !container.is(e.target)
+			//Якщо клік ......
+			&& container.has(e.target).length === 0) {
+			//Імітує клік на вказаний елемент
+			$('.main-menu__item_parent > a').trigger('click');
+		}
+	}
+});
 
 $('.language-toggle__current').on('click', function () {
 	
@@ -102,8 +102,12 @@ function animateText() {
 	},text_show_timer); 
 }animateText()
 
-$('.lvl-evolution').on('click', function() {
-	$(this).find('.lvl-overlay').toggleClass('_active');
+$('.lvl-evolution').mouseenter(function () {
+
+	$(this).find('.lvl-overlay').addClass('_active');
+}).mouseleave(function () {
+
+	$(this).find('.lvl-overlay').removeClass('_active');
 })
 
 let tickerSpeed = 0.5;
@@ -259,10 +263,15 @@ $('.toggle-serve').on('click', function() {
 	}
 });
 
-$('.side-links__item').on('click', function() {
-	
+$('.side-links__item').mouseenter(function () {
+
 	$('.side-links__link').not('.side-links__link_' + $(this).data('link')).removeClass('_active');
-	$('.side-links__link_' + $(this).data('link')).toggleClass('_active');
+	$('.side-links__link_' + $(this).data('link')).addClass('_active');
+})
+
+$('.side-links').mouseleave(function () {
+	
+	$('.side-links__link').removeClass('_active');
 })
 
 $(document).mouseup(function (e) {
