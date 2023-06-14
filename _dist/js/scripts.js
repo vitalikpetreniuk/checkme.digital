@@ -33,23 +33,23 @@ $('.language-toggle__current').on('click', function () {
 	$('.language-toggle__list').slideToggle();
 })
 
-// $(document).mouseup(function (e) {
-// 	//Назва контейнеру
-// 	let container = $('.language-toggle__list');
-// 	//Умова, щоб працювало тільки коли попап відкритий
-// 	if ($('.language-toggle__current').hasClass('_active')) {
-// 		//Умови при яких спрацює функція
-// 			//Якщо клікають не на посилання
-// 		if (!$("a").is(e.target)
-// 			//Якщо клік не на вікно попапу
-// 			&& !container.is(e.target)
-// 			//Якщо клік ......
-// 			&& container.has(e.target).length === 0) {
-// 			//Імітує клік на вказаний елемент
-// 			$('.language-toggle__current').trigger('click');
-// 		}
-// 	}
-// });
+$(document).mouseup(function (e) {
+	//Назва контейнеру
+	let container = $('.language-toggle');
+	//Умова, щоб працювало тільки коли попап відкритий
+	if ($('.language-toggle__current').hasClass('_active')) {
+		//Умови при яких спрацює функція
+			//Якщо клікають не на посилання
+		if (!$("a").is(e.target)
+			//Якщо клік не на вікно попапу
+			&& !container.is(e.target)
+			//Якщо клік ......
+			&& container.has(e.target).length === 0) {
+			//Імітує клік на вказаний елемент
+			$('.language-toggle__current').trigger('click');
+		}
+	}
+});
 
 $('.header__burger').on('click', function() {
 	$(this).toggleClass('_active');
@@ -291,5 +291,71 @@ $('.owner-evolution__overlay').on('click', function() {
 	
 	$(this).addClass('_hide');
 })
+
+$(document).mouseup(function (e) {
+	//Назва контейнеру
+	let container = $('.owner-evolution');
+	//Умова, щоб працювало тільки коли попап відкритий
+	if ($('.owner-evolution__overlay').hasClass('_hide')) {
+		//Умови при яких спрацює функція
+			//Якщо клікають не на посилання
+		if (!$("a").is(e.target)
+			//Якщо клік не на вікно попапу
+			&& !container.is(e.target)
+			//Якщо клік ......
+			&& container.has(e.target).length === 0) {
+			//Імітує клік на вказаний елемент
+			$('.owner-evolution__overlay').removeClass('_hide');
+		}
+	}
+});
+
+$('.info-footer__why').on('click', function(e) {
+	
+	e.preventDefault();
+	$('.freaks').addClass('_active');
+	$('body').addClass('_lock');
+})
+
+$('.freaks__close').on('click', function() {
+	
+	$('.freaks').removeClass('_active');
+	$('body').removeClass('_lock');
+})
+
+$('.side-links__link_book').on('click', function(e) {
+	
+	e.preventDefault();
+	$('.session').addClass('_active');
+	$('body').addClass('_lock');
+	$(this).removeClass('_active');
+})
+
+$('.session__close').on('click', function() {
+	
+	$('.session').removeClass('_active');
+	$('body').removeClass('_lock');
+})
+
+window.intlTelInput(document.querySelector('#contact-phone'), {
+	initialCountry: 'us',
+	placeholderNumberType: 'FIXED_LINE',
+	utilsScript: "../libs/phone-mask/utils.js",
+});
+
+
+$(window).on('load', function() {
+	
+	$('#contact-phone').on('countrychange', function() {
+		let country_info = $('.iti__selected-flag').attr('title');
+		let flag = country_info.substring(country_info.indexOf("+"))
+		let phone_placeholder = $('#contact-phone').attr('placeholder')
+		let old_text = phone_placeholder.substring(phone_placeholder.indexOf("+"))
+		let new_text = phone_placeholder.replace(old_text, flag);
+		
+		$('#contact-phone').attr('placeholder', new_text)
+	})
+});
+
 
 })
