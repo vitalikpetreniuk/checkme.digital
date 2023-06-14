@@ -2,12 +2,6 @@ var $ = jQuery;
 
 $(function() {
 
-// $('.ticker').marquee({
-// 	line: '.ticker__wrapper',
-// 	animSpeed: 50,
-// 	pauseOnHover: false,
-// });
-
 $('.main-menu__item_parent > a').on('click', function(e) {
 	e.preventDefault();
 	$(this).toggleClass('_active');
@@ -146,6 +140,7 @@ if($('.swiper').length) {
 			prevEl: '.slider-team__arrow_left',
 		},
 		autoHeight: true,
+		spaceBetween: 5,
 	});
 }
 

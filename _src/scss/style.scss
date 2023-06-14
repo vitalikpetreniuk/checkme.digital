@@ -175,7 +175,6 @@ body._lock {
 	justify-content: center;
 	align-items: center;
 	font: 700 14px/1.21 'Proxima';
-	text-transform: uppercase;
 	color: #fff;
 	border-radius: 32px;
 	background: linear-gradient(90deg, #E1007A -6.58%, #F19300 100%);
@@ -1467,6 +1466,7 @@ input[type=checkbox] {
 	&__link {
 		padding: 19px 28px;
 		margin-bottom: 13px;
+		text-transform: uppercase;
 
 		// .info-content__link_big-m
 		&_big-m {
@@ -1760,6 +1760,7 @@ input[type=checkbox] {
 
 	// .card-cost__ibox
 	&__ibox {
+		position: relative;
 		width: 64px;
 		height: 52px;
 		margin: 0 auto;
@@ -1770,6 +1771,40 @@ input[type=checkbox] {
 			height: 100%;
 			object-fit: contain;
 		}
+	}
+	
+	// .card-cost__ibox::before
+	&__ibox::before {
+		content: "";
+		position: absolute;
+		bottom: -17px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 92px;
+		height: 14px;
+		filter: blur(17.5px);
+		border-radius: 12px;
+		opacity: 1;
+		pointer-events: none;
+		transition: all linear 0.2s;
+	}
+
+	// .card-cost__ibox_1::before
+	&__ibox_1::before {
+		background: #E20C70;
+		box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
+	}
+
+	// .card-cost__ibox_2::before
+	&__ibox_2::before {
+		background: rgba(255, 188, 15, 0.68);
+		box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
+	}
+
+	// .card-cost__ibox_3::before
+	&__ibox_3::before {
+		background: #EB5D2D;
+		box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
 	}
 
 	// .card-cost__title
@@ -1834,7 +1869,6 @@ input[type=checkbox] {
 	
 		// .card-cost__ibox
 		&__ibox {
-			position: relative;
 			width: 90px;
 			height: 73px;
 			margin-bottom: 45px;
@@ -1842,38 +1876,9 @@ input[type=checkbox] {
 	
 		// .card-cost__ibox::before
 		&__ibox::before {
-			content: "";
-			position: absolute;
-			bottom: -17px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 92px;
-			height: 14px;
-			filter: blur(17.5px);
-			border-radius: 12px;
 			opacity: 0;
-			pointer-events: none;
-			transition: all linear 0.2s;
 		}
 	
-		// .card-cost__ibox_1::before
-		&__ibox_1::before {
-			background: #E20C70;
-			box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-		}
-
-		// .card-cost__ibox_2::before
-		&__ibox_2::before {
-			background: rgba(255, 188, 15, 0.68);
-			box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-		}
-
-		// .card-cost__ibox_3::before
-		&__ibox_3::before {
-			background: #EB5D2D;
-			box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-		}
-
 		// .card-cost:hover .card-cost__ibox::before
 		&:hover .card-cost__ibox::before {
 			opacity: 1;
@@ -3030,7 +3035,7 @@ input[type=checkbox] {
 		// .team__cont
 		&__cont {
 			padding-top: 65px;
-			padding-bottom: 50px;
+			padding-bottom: 15px;
 		}
 	
 		// .team__intro
@@ -3262,10 +3267,12 @@ input[type=checkbox] {
 		padding: 12px 10px;
 		transition: all linear 0.2s;
 		
+		// .consult__link._active
 		&._active {
 			background-color: #fff;
 		}
 		
+		// .consult__link._active span
 		&._active span {
 			background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
 			-webkit-background-clip: text;
@@ -3426,7 +3433,7 @@ input[type=checkbox] {
 
 		// .consult__cont
 		&__cont {
-			padding-top: 50px;
+			padding-top: 15px;
 			padding-bottom: 75px;
 		}
 		// .consult__nav
@@ -3441,6 +3448,22 @@ input[type=checkbox] {
 		&__link {
 			width: calc(16.66% - 10px);
 			padding: 10px;
+		
+			// .consult__link._active
+			&._active {
+				background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
+				border-color: transparent;
+			}
+			
+			// .consult__link._active span
+			&._active span {
+				background: none;
+				-webkit-background-clip: none;
+				-webkit-text-fill-color: initial;
+				background-clip: initial;
+				text-fill-color: initial;
+				color: #fff;
+			}
 		}
 	
 		// .consult__content
@@ -3659,6 +3682,7 @@ input[type=checkbox] {
 
 		// .item-services__inbox_submit
 		&_submit {
+			display: none;
 			width: 100%;
 			// text-align: center;
 			margin-top: 20px;
@@ -3787,6 +3811,7 @@ input[type=checkbox] {
 			column-gap: 30px;
 			row-gap: 11px;
 			align-items: flex-start;
+			margin-top: 30px;
 		}
 	
 		// .item-services__submit
@@ -3807,7 +3832,7 @@ input[type=checkbox] {
 	
 		// .item-services__inbox
 		&__inbox {
-			width: calc(33% - 20px);
+			width: calc(33.33% - 20px);
 			padding-bottom: 11px;
 		}
 	}
@@ -4647,12 +4672,21 @@ input[type=checkbox] {
 	
 		// .focus__info
 		&__info {
+			display: flex;
+			gap: 40px;
 			margin-bottom: 18px;
+		}
+
+		// .focus__left, .focus__right
+		&__left,
+		&__right {
+			width: calc(50% - 20px);
 		}
 	
 		// .focus__title
 		&__title {
 			font-size: 25px;
+			margin-bottom: 0;
 		}
 	
 		// .focus__content
@@ -4671,6 +4705,17 @@ input[type=checkbox] {
 	
 	.item-focus {
 		padding: 20px 25px 20px 35px;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.focus {
+	
+		// .focus__text
+		&__text {
+			font-size: 28px;
+		}
 	}
 }
 
@@ -5062,7 +5107,7 @@ input[type=checkbox] {
 		&_partner {
 
 			.lvl-serve__name {
-				right: 55px;
+				right: 30px;
 				left: initial;
 			}
 		}
@@ -5071,7 +5116,7 @@ input[type=checkbox] {
 		&__name {
 			position: absolute;
 			top: 0;
-			left: 55px;
+			left: 30px;
 			margin-bottom: 0;
 		}
 	
@@ -5100,7 +5145,7 @@ input[type=checkbox] {
 
 		// .serve__intro
 		&__intro {
-			margin-bottom: 50px;
+			margin-bottom: 20px;
 		}
 
 		// .serve__box
@@ -5116,29 +5161,30 @@ input[type=checkbox] {
 	
 			// .toggle-serve._active .toggle-serve__left
 			.toggle-serve__left {
-				left: -5.6%;
+				left: -15.3%;
 			}
 	
 			// .toggle-serve._active .toggle-serve__right
 			.toggle-serve__right {
-				right: -3.9%;
+				right: -11.3%;
 			}
 		}
 	
 		// .toggle-serve__left
 		&__left {
-			top: 26%;
-			left: -9%;
+			top: 13%;
+			left: -18%;
 			width: 822px;
-			height: 190px;
+			height: 279px;
+			transform: rotate(-1.74deg);
 		}
 	
 		// .toggle-serve__right
 		&__right {
-			top: -32%;
-			right: -7%;
-			width: 734px;
-			height: 325px;
+			top: -54%;
+			right: -14%;
+			width: 780px;
+			height: 406px;
 		}
 	}
 }
@@ -5232,7 +5278,15 @@ input[type=checkbox] {
 	
 		// .faq__info
 		&__info {
+			display: flex;
+			gap: 30px;
 			margin-bottom: 40px;
+		}
+
+		// .faq__left, .faq__right
+		&__left,
+		&__right {
+			width: calc(50% - 15px);
 		}
 	
 		// .faq__title
@@ -5266,23 +5320,15 @@ input[type=checkbox] {
 			padding-bottom: 150px;
 		}
 	
-		// .faq__info
-		&__info {
-			display: flex;
-			gap: 100px;
-		}
-	
 		// .faq__title
 		&__title {
 			font-size: 34px;
-			width: calc(50% - 50px);
 			max-width: 520px;
 			margin-bottom: 0;
 		}
 	
 		// .faq__text
 		&__text {
-			width: calc(50% - 50px);
 			font-size: 28px;
 		}
 	

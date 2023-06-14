@@ -252,7 +252,6 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   font: 700 14px/1.21 "Proxima";
-  text-transform: uppercase;
   color: #fff;
   border-radius: 32px;
   background: -webkit-gradient(linear, left top, right top, color-stop(-6.58%, #E1007A), to(#F19300));
@@ -1191,6 +1190,7 @@ input[type=checkbox] {
 .info-content__link {
   padding: 19px 28px;
   margin-bottom: 13px;
+  text-transform: uppercase;
 }
 
 .info-content__link_big-m {
@@ -1335,6 +1335,7 @@ input[type=checkbox] {
 }
 
 .card-cost__ibox {
+  position: relative;
   width: 64px;
   height: 52px;
   margin: 0 auto;
@@ -1346,6 +1347,44 @@ input[type=checkbox] {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.card-cost__ibox::before {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 92px;
+  height: 14px;
+  -webkit-filter: blur(17.5px);
+          filter: blur(17.5px);
+  border-radius: 12px;
+  opacity: 1;
+  pointer-events: none;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.card-cost__ibox_1::before {
+  background: #E20C70;
+  -webkit-box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
+          box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
+}
+
+.card-cost__ibox_2::before {
+  background: rgba(255, 188, 15, 0.68);
+  -webkit-box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
+          box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
+}
+
+.card-cost__ibox_3::before {
+  background: #EB5D2D;
+  -webkit-box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
+          box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
 }
 
 .card-cost__title {
@@ -2270,6 +2309,7 @@ input[type=checkbox] {
 }
 
 .item-services__inbox_submit {
+  display: none;
   width: 100%;
   margin-top: 20px;
   padding: 0;
@@ -3360,11 +3400,21 @@ input[type=checkbox] {
   }
 
   .focus__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 40px;
     margin-bottom: 18px;
+  }
+
+  .focus__left,
+  .focus__right {
+    width: calc(50% - 20px);
   }
 
   .focus__title {
     font-size: 25px;
+    margin-bottom: 0;
   }
 
   .focus__content {
@@ -3385,6 +3435,10 @@ input[type=checkbox] {
 
   .item-focus {
     padding: 20px 25px 20px 35px;
+  }
+
+  .focus__text {
+    font-size: 28px;
   }
 
   .serve {
@@ -3460,7 +3514,16 @@ input[type=checkbox] {
   }
 
   .faq__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 30px;
     margin-bottom: 40px;
+  }
+
+  .faq__left,
+  .faq__right {
+    width: calc(50% - 15px);
   }
 
   .faq__title {
@@ -3510,48 +3573,13 @@ input[type=checkbox] {
   }
 
   .card-cost__ibox {
-    position: relative;
     width: 90px;
     height: 73px;
     margin-bottom: 45px;
   }
 
   .card-cost__ibox::before {
-    content: "";
-    position: absolute;
-    bottom: -17px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 92px;
-    height: 14px;
-    -webkit-filter: blur(17.5px);
-            filter: blur(17.5px);
-    border-radius: 12px;
     opacity: 0;
-    pointer-events: none;
-    -webkit-transition: all linear 0.2s;
-    -o-transition: all linear 0.2s;
-    transition: all linear 0.2s;
-  }
-
-  .card-cost__ibox_1::before {
-    background: #E20C70;
-    -webkit-box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-            box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-  }
-
-  .card-cost__ibox_2::before {
-    background: rgba(255, 188, 15, 0.68);
-    -webkit-box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-            box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-  }
-
-  .card-cost__ibox_3::before {
-    background: #EB5D2D;
-    -webkit-box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
-            box-shadow: 0px 4px 25px rgba(227, 15, 109, 0.2);
   }
 
   .card-cost:hover .card-cost__ibox::before {
@@ -3867,7 +3895,7 @@ input[type=checkbox] {
 
   .team__cont {
     padding-top: 65px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
   }
 
   .team__intro {
@@ -4005,7 +4033,7 @@ input[type=checkbox] {
   }
 
   .consult__cont {
-    padding-top: 50px;
+    padding-top: 15px;
     padding-bottom: 75px;
   }
 
@@ -4022,6 +4050,21 @@ input[type=checkbox] {
   .consult__link {
     width: calc(16.66% - 10px);
     padding: 10px;
+  }
+
+  .consult__link._active {
+    background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
+    background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
+    border-color: transparent;
+  }
+
+  .consult__link._active span {
+    background: none;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    text-fill-color: initial;
+    color: #fff;
   }
 
   .consult__content {
@@ -4093,6 +4136,7 @@ input[type=checkbox] {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    margin-top: 30px;
   }
 
   .item-services__submit {
@@ -4109,7 +4153,7 @@ input[type=checkbox] {
   }
 
   .item-services__inbox {
-    width: calc(33% - 20px);
+    width: calc(33.33% - 20px);
     padding-bottom: 11px;
   }
 
@@ -4205,14 +4249,14 @@ input[type=checkbox] {
   }
 
   .lvl-serve_partner .lvl-serve__name {
-    right: 55px;
+    right: 30px;
     left: initial;
   }
 
   .lvl-serve__name {
     position: absolute;
     top: 0;
-    left: 55px;
+    left: 30px;
     margin-bottom: 0;
   }
 
@@ -4237,22 +4281,13 @@ input[type=checkbox] {
     padding-bottom: 150px;
   }
 
-  .faq__info {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 100px;
-  }
-
   .faq__title {
     font-size: 34px;
-    width: calc(50% - 50px);
     max-width: 520px;
     margin-bottom: 0;
   }
 
   .faq__text {
-    width: calc(50% - 50px);
     font-size: 28px;
   }
 
@@ -4547,7 +4582,7 @@ input[type=checkbox] {
   }
 
   .serve__intro {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .serve__box {
@@ -4555,25 +4590,28 @@ input[type=checkbox] {
   }
 
   .toggle-serve._active .toggle-serve__left {
-    left: -5.6%;
+    left: -15.3%;
   }
 
   .toggle-serve._active .toggle-serve__right {
-    right: -3.9%;
+    right: -11.3%;
   }
 
   .toggle-serve__left {
-    top: 26%;
-    left: -9%;
+    top: 13%;
+    left: -18%;
     width: 822px;
-    height: 190px;
+    height: 279px;
+    -webkit-transform: rotate(-1.74deg);
+        -ms-transform: rotate(-1.74deg);
+            transform: rotate(-1.74deg);
   }
 
   .toggle-serve__right {
-    top: -32%;
-    right: -7%;
-    width: 734px;
-    height: 325px;
+    top: -54%;
+    right: -14%;
+    width: 780px;
+    height: 406px;
   }
 }
 
