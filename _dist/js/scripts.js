@@ -2,6 +2,24 @@ var $ = jQuery;
 
 $(function() {
 
+$('.ticker').marquee({
+	line: '.ticker__wrapper',
+	animSpeed: 50,
+	pauseOnHover: false,
+});
+
+let scrollPos = 0;
+$(window).scroll(function () {
+
+	let st = $(this).scrollTop();
+	if (st > scrollPos) {
+		$('.header').addClass('_scroll');
+	} else {
+		$('.header').removeClass('_scroll');
+	}
+	scrollPos = st;
+});
+
 $('.main-menu__item_parent > a').on('click', function(e) {
 	e.preventDefault();
 	$(this).toggleClass('_active');
@@ -104,7 +122,7 @@ $('.lvl-revolution').mouseenter(function () {
 	$(this).find('.lvl-overlay').removeClass('_active');
 })
 
-let tickerSpeed = 0.5;
+let tickerSpeed = 1;
 const slideshowEl = document.querySelector('.ticker-innovators__wrapper');
 
 let flickity=null;let isPaused=false;const update=()=>{isPaused||(flickity.slides&&(flickity.x=(flickity.x-tickerSpeed)%flickity.slideableWidth,flickity.selectedIndex=flickity.dragEndRestingSelect(),flickity.updateSelectedSlide(),flickity.settle(flickity.x)),window.requestAnimationFrame(update))},pause=()=>{isPaused=!0},play=()=>{isPaused&&(isPaused=!1,window.requestAnimationFrame(update))};
@@ -287,28 +305,13 @@ $(document).mouseup(function (e) {
 	}
 });
 
-$('.owner-revolution__overlay').on('click', function() {
+$('.owner-revolution').mouseenter(function() {
 	
-	$(this).addClass('_hide');
-})
+	$('.owner-revolution__overlay').addClass('_hide');
+}).mouseleave(function () {
 
-$(document).mouseup(function (e) {
-	//Назва контейнеру
-	let container = $('.owner-revolution');
-	//Умова, щоб працювало тільки коли попап відкритий
-	if ($('.owner-revolution__overlay').hasClass('_hide')) {
-		//Умови при яких спрацює функція
-			//Якщо клікають не на посилання
-		if (!$("a").is(e.target)
-			//Якщо клік не на вікно попапу
-			&& !container.is(e.target)
-			//Якщо клік ......
-			&& container.has(e.target).length === 0) {
-			//Імітує клік на вказаний елемент
-			$('.owner-revolution__overlay').removeClass('_hide');
-		}
-	}
-});
+	$('.owner-revolution__overlay').removeClass('_hide');
+})
 
 $('.info-footer__why').on('click', function(e) {
 	
@@ -323,7 +326,7 @@ $('.freaks__close').on('click', function() {
 	$('body').removeClass('_lock');
 })
 
-$('.side-links__link_book').on('click', function(e) {
+$('.side-links__link_book, .info-content__link').on('click', function(e) {
 	
 	e.preventDefault();
 	if ($('.freaks').hasClass('_active')) {
@@ -339,6 +342,24 @@ $('.session__close').on('click', function() {
 	$('.session').removeClass('_active');
 	$('body').removeClass('_lock');
 })
+
+$(document).mouseup(function (e) {
+	//Назва контейнеру
+	let container = $('.session__wrapper, .freaks__wrapper');
+	//Умова, щоб працювало тільки коли попап відкритий
+	if ($('.session, .freaks').hasClass('_active')) {
+		//Умови при яких спрацює функція
+			//Якщо клікають не на посилання
+		if (!$("a").is(e.target)
+			//Якщо клік не на вікно попапу
+			&& !container.is(e.target)
+			//Якщо клік ......
+			&& container.has(e.target).length === 0) {
+			//Імітує клік на вказаний елемент
+			$('.session, .freaks').removeClass('_active');
+		}
+	}
+});
 
 window.intlTelInput(document.querySelector('#contact-phone'), {
 	initialCountry: 'us',
@@ -372,11 +393,11 @@ $("._anchor").on('click', function(e) {
 		if ($(this).parent().hasClass('main-menu__item') && $('.header__content').hasClass('_active')) {
 			$('.header__burger').trigger('click');
 		}
-		$('html').animate({scrollTop: $('section' + target).offset().top - $('.header').height() - 15}, 500);
+		$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
 	} else {
 
 		target = $(this).data('anchor');
-		$('html').animate({scrollTop: $('section' + target).offset().top - $('.header').height() - 15}, 500);
+		$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
 	}
 	
 });

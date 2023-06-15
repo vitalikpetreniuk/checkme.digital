@@ -798,7 +798,13 @@ input[type=checkbox] {
   background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
   border-radius: 32px;
+  margin-bottom: 15px;
   cursor: pointer;
+}
+
+.session-form__agree {
+  font: 100 14px/1.21 "Proxima";
+  max-width: 525px;
 }
 
 .iti {
@@ -822,7 +828,14 @@ input[type=checkbox] {
   background: rgba(17, 21, 28, 0.7);
   -webkit-backdrop-filter: blur(3.5px);
           backdrop-filter: blur(3.5px);
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
   z-index: 100;
+}
+
+.header._scroll {
+  margin-top: -37px;
 }
 
 .header__cont {
@@ -1546,10 +1559,15 @@ input[type=checkbox] {
 }
 
 .info-content__comment {
+  display: inline-block;
   font: 200 14px/1.21 "Proxima", sans-serif;
   color: #C1C1C1;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.info-content__comment:hover {
+  text-decoration: none;
 }
 
 .video-content {
@@ -2293,6 +2311,10 @@ input[type=checkbox] {
   width: calc(50% - 10px);
 }
 
+.team-features__col:last-child {
+  max-width: 180px;
+}
+
 .team-features__title {
   font: 700 14px/1.21 "SF-UI";
   margin-bottom: 5px;
@@ -2627,6 +2649,7 @@ input[type=checkbox] {
   padding: 18px 36px;
   margin: 0 auto;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .item-services__submit_dt {
@@ -2939,6 +2962,14 @@ input[type=checkbox] {
   padding: 0;
 }
 
+.item-how-work__inbox_submit a {
+  display: inline-block;
+}
+
+.item-how-work__inbox_submit a input {
+  pointer-events: none;
+}
+
 .item-how-work__inbox label {
   font: 300 14px/1.42 "SF-UI";
   cursor: pointer;
@@ -3207,6 +3238,9 @@ input[type=checkbox] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 20px;
   padding: 0 20px;
 }
@@ -3316,6 +3350,7 @@ input[type=checkbox] {
   text-align: center;
   border-radius: 12px;
   padding: 0 10px 10px;
+  margin-top: 40px;
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
@@ -3327,6 +3362,7 @@ input[type=checkbox] {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  margin-top: 0;
 }
 
 .lvl-serve_partner .lvl-serve__name {
@@ -3809,12 +3845,6 @@ input[type=checkbox] {
     max-width: 768px;
   }
 
-  .serve__wrapper {
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-
   .toggle-serve {
     height: 290px;
   }
@@ -3853,7 +3883,6 @@ input[type=checkbox] {
 
   .lvl-serve_partner {
     text-align: right;
-    margin-bottom: 40px;
   }
 
   .lvl-serve__name {
@@ -4526,7 +4555,7 @@ input[type=checkbox] {
   .instruments__title {
     font-size: 34px;
     margin-bottom: 10px;
-    max-width: 630px;
+    max-width: 540px;
   }
 
   .instruments__link {
@@ -4545,7 +4574,12 @@ input[type=checkbox] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 50px;
+    gap: 30px;
+  }
+
+  .how-work__left,
+  .how-work__right {
+    width: calc(50% - 15px);
   }
 
   .work-nav {
@@ -4932,10 +4966,6 @@ input[type=checkbox] {
   .ticker-instruments__ibox {
     width: 140px;
     height: 140px;
-  }
-
-  .how-work__wrapper {
-    gap: 150px;
   }
 
   .serve__intro {
