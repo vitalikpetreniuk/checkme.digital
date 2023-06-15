@@ -96,7 +96,7 @@ function animateText() {
 	},text_show_timer); 
 }animateText()
 
-$('.lvl-evolution').mouseenter(function () {
+$('.lvl-revolution').mouseenter(function () {
 
 	$(this).find('.lvl-overlay').addClass('_active');
 }).mouseleave(function () {
@@ -287,16 +287,16 @@ $(document).mouseup(function (e) {
 	}
 });
 
-$('.owner-evolution__overlay').on('click', function() {
+$('.owner-revolution__overlay').on('click', function() {
 	
 	$(this).addClass('_hide');
 })
 
 $(document).mouseup(function (e) {
 	//Назва контейнеру
-	let container = $('.owner-evolution');
+	let container = $('.owner-revolution');
 	//Умова, щоб працювало тільки коли попап відкритий
-	if ($('.owner-evolution__overlay').hasClass('_hide')) {
+	if ($('.owner-revolution__overlay').hasClass('_hide')) {
 		//Умови при яких спрацює функція
 			//Якщо клікають не на посилання
 		if (!$("a").is(e.target)
@@ -305,7 +305,7 @@ $(document).mouseup(function (e) {
 			//Якщо клік ......
 			&& container.has(e.target).length === 0) {
 			//Імітує клік на вказаний елемент
-			$('.owner-evolution__overlay').removeClass('_hide');
+			$('.owner-revolution__overlay').removeClass('_hide');
 		}
 	}
 });
@@ -326,6 +326,9 @@ $('.freaks__close').on('click', function() {
 $('.side-links__link_book').on('click', function(e) {
 	
 	e.preventDefault();
+	if ($('.freaks').hasClass('_active')) {
+		$('.freaks').removeClass('_active');
+	}
 	$('.session').addClass('_active');
 	$('body').addClass('_lock');
 	$(this).removeClass('_active');
@@ -357,5 +360,15 @@ $(window).on('load', function() {
 	})
 });
 
+$("._anchor").on('click', function(e) {
+
+	let target = $(this).attr('href');
+
+	e.preventDefault();
+	if ($(this).parent().hasClass('main-menu__item')) {
+		$('.header__burger').trigger('click');
+	}
+	$('html').animate({scrollTop: $('section' + target).offset().top - $('.header').height() - 15}, 500);
+});
 
 })
