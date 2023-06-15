@@ -676,7 +676,7 @@ input[type=checkbox] {
 
 	// .left-session__percent
 	&__percent {
-		font: 700 68px/1 'Proxima';
+		font: 700 54px/1 'Proxima';
 		background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -1492,12 +1492,16 @@ input[type=checkbox] {
 	// .info-footer__mail
 	&__mail {
 		font: 700 14px/1.21 'Proxima';
+		text-decoration: underline;
+		text-underline-offset: 3px;
 		margin-bottom: 5px;
 	}
 
 	// .info-footer__why
 	&__why {
 		font: 300 12px/1.25 'Proxima';
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 }
 
@@ -5405,12 +5409,14 @@ input[type=checkbox] {
 
 		// .toggle-serve__center button
 		& button {
+			position: relative;
 			font: 300 14px/1.21 'Proxima';
 			text-transform: uppercase;
 			width: 54px;
 			height: 54px;
 			background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
 			border-radius: 50%;
+			z-index: 2;
 		}
 	}
 
@@ -5422,6 +5428,7 @@ input[type=checkbox] {
 		width: 231px;
 		height: 122px;
 		transition: all linear 0.2s;
+		z-index: -1;
 
 		& img {
 			width: 100%;

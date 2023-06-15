@@ -362,13 +362,23 @@ $(window).on('load', function() {
 
 $("._anchor").on('click', function(e) {
 
-	let target = $(this).attr('href');
+	// let target = $(this).attr('href');
+	let target;
 
 	e.preventDefault();
-	if ($(this).parent().hasClass('main-menu__item') && $('.header__content').hasClass('_active')) {
-		$('.header__burger').trigger('click');
+	if ($(this).attr('href')) {
+
+		target = $(this).attr('href');
+		if ($(this).parent().hasClass('main-menu__item') && $('.header__content').hasClass('_active')) {
+			$('.header__burger').trigger('click');
+		}
+		$('html').animate({scrollTop: $('section' + target).offset().top - $('.header').height() - 15}, 500);
+	} else {
+
+		target = $(this).data('anchor');
+		$('html').animate({scrollTop: $('section' + target).offset().top - $('.header').height() - 15}, 500);
 	}
-	$('html').animate({scrollTop: $('section' + target).offset().top - $('.header').height() - 15}, 500);
+	
 });
 
 })

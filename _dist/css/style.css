@@ -689,7 +689,7 @@ input[type=checkbox] {
 }
 
 .left-session__percent {
-  font: 700 68px/1 "Proxima";
+  font: 700 54px/1 "Proxima";
   background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
   -webkit-background-clip: text;
@@ -1201,11 +1201,15 @@ input[type=checkbox] {
 
 .info-footer__mail {
   font: 700 14px/1.21 "Proxima";
+  text-decoration: underline;
+  text-underline-offset: 3px;
   margin-bottom: 5px;
 }
 
 .info-footer__why {
   font: 300 12px/1.25 "Proxima";
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .sub-footer__title {
@@ -3276,6 +3280,7 @@ input[type=checkbox] {
 }
 
 .toggle-serve__center button {
+  position: relative;
   font: 300 14px/1.21 "Proxima";
   text-transform: uppercase;
   width: 54px;
@@ -3283,6 +3288,7 @@ input[type=checkbox] {
   background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
   border-radius: 50%;
+  z-index: 2;
 }
 
 .toggle-serve__right {
@@ -3294,6 +3300,7 @@ input[type=checkbox] {
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
+  z-index: -1;
 }
 
 .toggle-serve__right img {
