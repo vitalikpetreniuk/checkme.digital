@@ -1439,7 +1439,7 @@ input[type=checkbox] {
 
 	// .footer__partners
 	&__partners {
-		// margin-bottom: 40px;
+		margin-bottom: 40px;
 	}
 
 	// .footer__social
@@ -1609,8 +1609,7 @@ input[type=checkbox] {
 .partners-footer {
 	display: flex;
 	align-items: flex-end;
-	justify-content: space-around;
-	gap: 8px;
+	gap: 15px;
 
 	// .partners-footer__ibox
 	&__ibox {
@@ -1662,6 +1661,7 @@ input[type=checkbox] {
 	}
 	
 	.partners-footer {
+		gap: 40px;
 	
 		// .partners-footer__ibox
 		&__ibox {
@@ -1770,8 +1770,7 @@ input[type=checkbox] {
 	}
 	
 	.partners-footer {
-		justify-content: space-between;
-		gap: 40px;
+		margin-bottom: 0;
 	
 		// .partners-footer__ibox
 		&__ibox {

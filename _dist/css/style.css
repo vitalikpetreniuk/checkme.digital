@@ -1153,6 +1153,10 @@ input[type=checkbox] {
   margin-bottom: 30px;
 }
 
+.footer__partners {
+  margin-bottom: 40px;
+}
+
 .info-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1301,9 +1305,7 @@ input[type=checkbox] {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  gap: 8px;
+  gap: 15px;
 }
 
 .partners-footer__ibox {
@@ -3459,6 +3461,10 @@ input[type=checkbox] {
     font-size: 16px;
   }
 
+  .partners-footer {
+    gap: 40px;
+  }
+
   .partners-footer__ibox {
     height: 25px;
     max-height: none;
@@ -4033,10 +4039,7 @@ input[type=checkbox] {
   }
 
   .partners-footer {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    gap: 40px;
+    margin-bottom: 0;
   }
 
   .partners-footer__ibox {
