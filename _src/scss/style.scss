@@ -2331,13 +2331,17 @@ input[type=checkbox] {
 
 	// .card-cost__title
 	&__title {
+		position: relative;
 		font: 700 18px/1.22 'Proxima';
 		margin-bottom: 6px;
+		z-index: 2;
 	}
 
 	// .card-cost__text
 	&__text {
+		position: relative;
 		line-height: 1.4;
+		z-index: 2;
 	}
 }
 
@@ -4259,7 +4263,7 @@ input[type=checkbox] {
 		background: transparent;
 		border: 1px solid #fff;
 		border-radius: 12px;
-		padding: 12px 10px;
+		padding: 12px 5px;
 		transition: all linear 0.2s;
 		
 		&._active {
