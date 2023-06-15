@@ -365,7 +365,7 @@ $("._anchor").on('click', function(e) {
 	let target = $(this).attr('href');
 
 	e.preventDefault();
-	if ($(this).parent().hasClass('main-menu__item')) {
+	if ($(this).parent().hasClass('main-menu__item') && $('.header__content').hasClass('_active')) {
 		$('.header__burger').trigger('click');
 	}
 	$('html').animate({scrollTop: $('section' + target).offset().top - $('.header').height() - 15}, 500);
