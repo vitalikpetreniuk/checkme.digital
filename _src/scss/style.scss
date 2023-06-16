@@ -582,7 +582,7 @@ input[type=checkbox] {
 		background: #11151C40;
 		backdrop-filter: blur(100px);
 		border-radius: 12px;
-		padding: 60px 110px;
+		padding: 40px 110px;
 		z-index: 2;
 
 		// .session__wrapper::-webkit-scrollbar
@@ -778,13 +778,14 @@ input[type=checkbox] {
 	// .session-form__submit
 	&__submit {
 
+		// .session-form__submit button
 		& button {
 			font: 700 14px/1.21 'Proxima';
 			text-transform: uppercase;
 			padding: 18px 50px;
 			background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
 			border-radius: 32px;
-			margin-bottom: 15px;
+			margin-bottom: 5px;
 			cursor: pointer;
 		}
 	}
