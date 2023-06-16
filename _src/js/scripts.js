@@ -21,6 +21,7 @@ $(window).scroll(function () {
 });
 
 $('.main-menu__item_parent > a').on('click', function(e) {
+
 	e.preventDefault();
 	$(this).toggleClass('_active');
 	$(this).parent().toggleClass('_active');
@@ -216,7 +217,37 @@ $('.nav-services__link').on('click', function(e) {
 	$('.nav-services__line span').css('width', $(this).data('line') + '%')
 })
 
-$('.work-nav__link').on('click', function(e) {
+var buttons = $('.work-nav__link');
+var image = $('.work-nav__bg');
+var totalButtons = buttons.length;
+var angle = 360 / totalButtons;
+// var currentRotation
+
+$('.work-nav__link').on('mouseenter click', function(e) {
+	var currentIndex = buttons.index(this);
+	// var transformValue = image.css('transform');
+	
+	var targetRotation = angle * currentIndex;
+	// var clockwiseRotation = targetRotation - currentRotation;
+	// var counterClockwiseRotation = currentRotation - targetRotation;
+
+	// var rotation;
+	// if (clockwiseRotation < counterClockwiseRotation) {
+	// 	rotation = targetRotation;
+	// } else {
+	// 	rotation = targetRotation - 360;
+	// }
+	
+	// function getRotateValue(transformValue) {
+	// 	if (transformValue !== 'none') {
+	// 		var matches = transformValue.match(/rotate\(([^)]+)\)/);
+	// 		if (matches) {
+	// 			console.log(matches[1]);
+	// 			return matches[1];
+	// 		}
+	// 	}
+	// 	return 0;
+	// }
 	
 	e.preventDefault();
 	$('.work-nav__link').removeClass('_active');
@@ -224,7 +255,10 @@ $('.work-nav__link').on('click', function(e) {
 
 	$('.item-how-work').removeClass('_active');
 	$('.item-how-work' + $(this).attr('href')).addClass('_active');
-	$('.work-nav__bg').css('transform', 'translate(-50%,-50%)rotate('+ $(this).data('rotate') +'deg)')
+	$('.work-nav__bg').attr('data-rotate', targetRotation).css('transform', 'translate(-50%,-50%)rotate('+ targetRotation +'deg)')
+
+	// currentRotation = $('.work-nav__bg').data('rotate');
+	// console.log($('.work-nav__bg').data('rotate'));
 })
 
 $('.spoiler-faq__name').on('click', function () {
@@ -357,6 +391,7 @@ $(document).mouseup(function (e) {
 			&& container.has(e.target).length === 0) {
 			//Імітує клік на вказаний елемент
 			$('.session, .freaks').removeClass('_active');
+			$('body').removeClass('_lock');
 		}
 	}
 });
@@ -383,7 +418,6 @@ $(window).on('load', function() {
 
 $("._anchor").on('click', function(e) {
 
-	// let target = $(this).attr('href');
 	let target;
 
 	e.preventDefault();

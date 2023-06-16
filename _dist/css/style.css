@@ -791,7 +791,7 @@ input[type=checkbox] {
   font: 100 14px/1.21 "Proxima";
 }
 
-.session-form__submit input {
+.session-form__submit button {
   font: 700 14px/1.21 "Proxima";
   text-transform: uppercase;
   padding: 18px 50px;
@@ -1245,7 +1245,7 @@ input[type=checkbox] {
   border-bottom: 1px solid #fff;
 }
 
-.sub-footer__submit input {
+.sub-footer__submit button {
   font: 700 14px/1.21 "Proxima";
   text-transform: uppercase;
   padding: 10px 33px;
@@ -2069,7 +2069,7 @@ input[type=checkbox] {
   display: none;
 }
 
-.owner-form__inbox_submit input {
+.owner-form__inbox_submit button {
   font: 700 14px/1.21 "SF-UI";
   text-transform: uppercase;
   background: -o-linear-gradient(177.76deg, #e1007a 11.77%, #f19300 100%);
@@ -2081,11 +2081,6 @@ input[type=checkbox] {
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
-}
-
-.owner-form__inbox_submit input:hover {
-  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
 .introdusing__cont {
@@ -2524,11 +2519,6 @@ input[type=checkbox] {
   transition: all linear 0.2s;
 }
 
-.item-consult__submit:hover {
-  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-}
-
 .item-consult__submit_dt {
   display: none;
 }
@@ -2649,7 +2639,6 @@ input[type=checkbox] {
   padding: 18px 36px;
   margin: 0 auto;
   cursor: pointer;
-  pointer-events: none;
 }
 
 .item-services__submit_dt {
@@ -2919,6 +2908,7 @@ input[type=checkbox] {
 
 .item-how-work__submit {
   font: 700 14px/1.21 "SF-UI";
+  text-transform: uppercase;
   background: -o-linear-gradient(177.76deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
   border-radius: 30px;
@@ -4227,6 +4217,7 @@ input[type=checkbox] {
   }
 
   .owner-form__inbox_submit {
+    width: 100%;
     padding: 0;
     border-bottom: none;
   }
@@ -4531,7 +4522,7 @@ input[type=checkbox] {
   }
 
   .item-services__submit_dt {
-    display: block;
+    display: inline-block;
   }
 
   .item-services__submit_mb {
@@ -4755,6 +4746,10 @@ input[type=checkbox] {
 
   .owner-form__inbox {
     width: calc(50% - 30px);
+  }
+
+  .owner-form__inbox_submit {
+    width: 100%;
   }
 
   .introdusing__top {

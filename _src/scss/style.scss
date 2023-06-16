@@ -778,7 +778,7 @@ input[type=checkbox] {
 	// .session-form__submit
 	&__submit {
 
-		& input {
+		& button {
 			font: 700 14px/1.21 'Proxima';
 			text-transform: uppercase;
 			padding: 18px 50px;
@@ -1536,7 +1536,7 @@ input[type=checkbox] {
 	// .sub-footer__submit
 	&__submit {
 
-		& input {
+		& button {
 			font: 700 14px/1.21 'Proxima';
 			text-transform: uppercase;
 			padding: 10px 33px;
@@ -2742,8 +2742,8 @@ input[type=checkbox] {
 			display: none;
 		}
 
-		// .owner-form__inbox_submit input
-		&_submit input {
+		// .owner-form__inbox_submit button
+		&_submit button {
 			font: 700 14px/1.21 'SF-UI';
 			text-transform: uppercase;
 			background: linear-gradient(272.24deg,#e1007a 11.77%,#f19300 100%);
@@ -2752,11 +2752,6 @@ input[type=checkbox] {
 			margin-top: 20px;
 			cursor: pointer;
 			transition: all linear 0.2s;
-		}
-
-		// .owner-form__inbox_submit input:hover
-		&_submit input:hover {
-			box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 		}
 	}
 }
@@ -2943,6 +2938,7 @@ input[type=checkbox] {
 
 			// .owner-form__inbox_submit
 			&_submit {
+				width: 100%;
 				padding: 0;
 				border-bottom: none;
 			}
@@ -3002,6 +2998,11 @@ input[type=checkbox] {
 		// .owner-form__inbox
 		&__inbox {
 			width: calc(50% - 30px);
+
+			// .owner-form__inbox_submit
+			&_submit {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -3872,11 +3873,6 @@ input[type=checkbox] {
 		cursor: pointer;
 		transition: all linear 0.2s;
 
-		// .item-consult__submit:hover
-		&:hover {
-			box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-		}
-
 		// .item-consult__submit_dt
 		&_dt {
 			display: none;
@@ -4195,7 +4191,6 @@ input[type=checkbox] {
 		padding: 18px 36px;
 		margin: 0 auto;
 		cursor: pointer;
-		pointer-events: none;
 
 		// .item-services__submit_dt
 		&_dt {
@@ -4375,7 +4370,7 @@ input[type=checkbox] {
 	
 			// .item-services__submit_dt
 			&_dt {
-				display: block;
+				display: inline-block;
 			}
 	
 			// .item-services__submit_mb
@@ -4808,6 +4803,7 @@ input[type=checkbox] {
 	// .item-how-work__submit
 	&__submit {
 		font: 700 14px/1.21 'SF-UI';
+		text-transform: uppercase;
 		background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
 		border-radius: 30px;
 		padding: 18px 36px;
