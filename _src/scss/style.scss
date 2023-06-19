@@ -298,17 +298,25 @@ input[type=checkbox] {
 			pointer-events: all;
 		}
 
+		// .side-links__link_book
 		&_book {
 			top: 0;
 			background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
 		}
 
+		// .side-links__link_book::before
+		&_book::before {
+			border-radius: 12px;
+		}
+
+		// .side-links__link_comment
 		&_comment {
 			top: 50%;
 			transform: translateY(-50%);
 			color: #EB5D2D;
 		}
 
+		// .side-links__link_faq
 		&_faq {
 			bottom: 0;
 			color: #EB5D2D;
@@ -989,10 +997,6 @@ input[type=checkbox] {
 	backdrop-filter: blur(3.5px);
 	transition: all linear 0.2s;
 	z-index: 100;
-
-	&._scroll {
-		margin-top: -37px;
-	}
 
 	// .header__cont
 	&__cont {
@@ -1812,6 +1816,11 @@ input[type=checkbox] {
 	width: 100%;
 	overflow: hidden;
 	padding: 10px 0;
+	transition: all linear 0.2s;
+
+	&._scroll {
+		margin-top: -37px;
+	}
 
 	// .ticker__wrapper
 	&__wrapper {

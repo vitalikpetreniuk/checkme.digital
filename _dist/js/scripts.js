@@ -13,9 +13,9 @@ $(window).scroll(function () {
 
 	let st = $(this).scrollTop();
 	if (st > scrollPos) {
-		$('.header').addClass('_scroll');
+		$('.ticker').addClass('_scroll');
 	} else {
-		$('.header').removeClass('_scroll');
+		$('.ticker').removeClass('_scroll');
 	}
 	scrollPos = st;
 });
@@ -221,33 +221,11 @@ var buttons = $('.work-nav__link');
 var image = $('.work-nav__bg');
 var totalButtons = buttons.length;
 var angle = 360 / totalButtons;
-// var currentRotation
 
 $('.work-nav__link').on('mouseenter click', function(e) {
-	var currentIndex = buttons.index(this);
-	// var transformValue = image.css('transform');
-	
-	var targetRotation = angle * currentIndex;
-	// var clockwiseRotation = targetRotation - currentRotation;
-	// var counterClockwiseRotation = currentRotation - targetRotation;
 
-	// var rotation;
-	// if (clockwiseRotation < counterClockwiseRotation) {
-	// 	rotation = targetRotation;
-	// } else {
-	// 	rotation = targetRotation - 360;
-	// }
-	
-	// function getRotateValue(transformValue) {
-	// 	if (transformValue !== 'none') {
-	// 		var matches = transformValue.match(/rotate\(([^)]+)\)/);
-	// 		if (matches) {
-	// 			console.log(matches[1]);
-	// 			return matches[1];
-	// 		}
-	// 	}
-	// 	return 0;
-	// }
+	var currentIndex = buttons.index(this);
+	var targetRotation = angle * currentIndex;
 	
 	e.preventDefault();
 	$('.work-nav__link').removeClass('_active');
@@ -255,10 +233,7 @@ $('.work-nav__link').on('mouseenter click', function(e) {
 
 	$('.item-how-work').removeClass('_active');
 	$('.item-how-work' + $(this).attr('href')).addClass('_active');
-	$('.work-nav__bg').attr('data-rotate', targetRotation).css('transform', 'translate(-50%,-50%)rotate('+ targetRotation +'deg)')
-
-	// currentRotation = $('.work-nav__bg').data('rotate');
-	// console.log($('.work-nav__bg').data('rotate'));
+	image.css('transform', 'translate(-50%,-50%)rotate('+ targetRotation +'deg)')
 })
 
 $('.spoiler-faq__name').on('click', function () {
@@ -368,6 +343,9 @@ $('.side-links__link_book, .info-content__link').on('click', function(e) {
 	if ($('.freaks').hasClass('_active')) {
 		$('.freaks').removeClass('_active');
 	}
+	if ($('.header__content').hasClass('_active')) {
+		$('.header__burger').trigger('click')
+	}
 	$('.session').addClass('_active');
 	$('body').addClass('_lock');
 	$('.header').addClass('_scroll');
@@ -428,7 +406,7 @@ $("._anchor").on('click', function(e) {
 	if ($(this).attr('href')) {
 
 		target = $(this).attr('href');
-		if ($(this).parent().hasClass('main-menu__item') && $('.header__content').hasClass('_active')) {
+		if ($('.header__content').hasClass('_active')) {
 			$('.header__burger').trigger('click');
 		}
 		$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);

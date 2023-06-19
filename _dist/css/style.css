@@ -389,6 +389,10 @@ input[type=checkbox] {
   background: linear-gradient(272.24deg, #E1007A 11.77%, #F19300 100%);
 }
 
+.side-links__link_book::before {
+  border-radius: 12px;
+}
+
 .side-links__link_comment {
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -832,10 +836,6 @@ input[type=checkbox] {
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
   z-index: 100;
-}
-
-.header._scroll {
-  margin-top: -37px;
 }
 
 .header__cont {
@@ -1351,6 +1351,13 @@ input[type=checkbox] {
   width: 100%;
   overflow: hidden;
   padding: 10px 0;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.ticker._scroll {
+  margin-top: -37px;
 }
 
 .ticker__wrapper {
