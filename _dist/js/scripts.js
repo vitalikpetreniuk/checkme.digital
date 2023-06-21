@@ -2,11 +2,13 @@ var $ = jQuery;
 
 $(function() {
 
-$('.ticker').marquee({
-	line: '.ticker__wrapper',
-	animSpeed: 50,
-	pauseOnHover: false,
-});
+	if ($('.ticker').length) {
+		$('.ticker').marquee({
+			line: '.ticker__wrapper',
+			animSpeed: 50,
+			pauseOnHover: false,
+		});
+	}
 
 let scrollPos = 0;
 $(window).scroll(function () {
