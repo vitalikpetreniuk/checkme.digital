@@ -431,11 +431,14 @@ $(document).mouseup(function (e) {
 	}
 });
 
-window.intlTelInput(document.querySelector('#contact-phone'), {
-	initialCountry: 'us',
-	placeholderNumberType: 'FIXED_LINE',
-	utilsScript: "../libs/phone-mask/utils.js",
-});
+if ($('.intlTelInput').length) {
+
+	window.intlTelInput(document.querySelector('#contact-phone'), {
+		initialCountry: 'us',
+		placeholderNumberType: 'FIXED_LINE',
+		utilsScript: "../libs/phone-mask/utils.js",
+	});
+}
 
 
 $(window).on('load', function() {
