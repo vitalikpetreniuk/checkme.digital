@@ -136,32 +136,35 @@ $('.lvl-revolution').mouseenter(function () {
 	$(this).find('.lvl-overlay').removeClass('_active');
 })
 
-let tickerSpeed = 1;
-const slideshowEl = document.querySelector('.ticker-innovators__wrapper');
+if ($('.flickity').length) {
 
-let flickity=null;let isPaused=false;const update=()=>{isPaused||(flickity.slides&&(flickity.x=(flickity.x-tickerSpeed)%flickity.slideableWidth,flickity.selectedIndex=flickity.dragEndRestingSelect(),flickity.updateSelectedSlide(),flickity.settle(flickity.x)),window.requestAnimationFrame(update))},pause=()=>{isPaused=!0},play=()=>{isPaused&&(isPaused=!1,window.requestAnimationFrame(update))};
+	let tickerSpeed = 1;
+	const slideshowEl = document.querySelector('.ticker-innovators__wrapper');
 
-flickity = new Flickity(slideshowEl, {
-	autoPlay: false,
-	prevNextButtons: false,
-	pageDots: false,
-	draggable: true,
-	wrapAround: true,
-	selectedAttraction: 0.015,
-	friction: 0.25
-});
-flickity.x = 0;
+	let flickity=null;let isPaused=false;const update=()=>{isPaused||(flickity.slides&&(flickity.x=(flickity.x-tickerSpeed)%flickity.slideableWidth,flickity.selectedIndex=flickity.dragEndRestingSelect(),flickity.updateSelectedSlide(),flickity.settle(flickity.x)),window.requestAnimationFrame(update))},pause=()=>{isPaused=!0},play=()=>{isPaused&&(isPaused=!1,window.requestAnimationFrame(update))};
 
-// slideshowEl.addEventListener('mouseenter', pause, false);
-// slideshowEl.addEventListener('focusin', pause, false);
-slideshowEl.addEventListener('mouseleave', play, false);
-slideshowEl.addEventListener('focusout', play, false);
+	flickity = new Flickity(slideshowEl, {
+		autoPlay: false,
+		prevNextButtons: false,
+		pageDots: false,
+		draggable: true,
+		wrapAround: true,
+		selectedAttraction: 0.015,
+		friction: 0.25
+	});
+	flickity.x = 0;
 
-flickity.on('dragStart', () => {
-  isPaused = true;
-});
+	// slideshowEl.addEventListener('mouseenter', pause, false);
+	// slideshowEl.addEventListener('focusin', pause, false);
+	slideshowEl.addEventListener('mouseleave', play, false);
+	slideshowEl.addEventListener('focusout', play, false);
 
-update();
+	flickity.on('dragStart', () => {
+	isPaused = true;
+	});
+
+	update();
+}
 
 if($('.swiper').length) {
 
