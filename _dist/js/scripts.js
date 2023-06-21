@@ -92,7 +92,7 @@ $('.header__burger').on('click', function() {
 
 $('.video-content__button').on('click', function () {
 	
-	$('.video-content__vbox video').attr('src', 'img/content/main.mp4').attr('controls', true).removeAttr('muted').prop('muted', false);
+	$('.video-content__vbox video').attr('src', 'http://dev.checkme.digital/wp-content/themes/checkme-digital/assets/img/content/main.mp4').attr('controls', true).removeAttr('muted').prop('muted', false);
 	$(this).remove()
 })
 
