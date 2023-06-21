@@ -232,6 +232,13 @@ input[type=checkbox] {
 			border-radius: 0 12px 12px 0;
 		}
 
+		// .side-links._left .side-links__item
+		.side-links__item {
+			width: 45px;
+			height: 29px;
+			padding: 5px 12px 5px 14px;
+		}
+
 		// .side-links._left .side-links__link
 		.side-links__link {
 			right: initial;
@@ -374,6 +381,11 @@ input[type=checkbox] {
 	// .social-list__link
 	&__link {
 		display: block;
+		transition: all linear 0.2s;
+
+		&:hover {
+			opacity: 0.5;
+		}
 
 		// .social-list__link img
 		& img {
@@ -1050,8 +1062,8 @@ input[type=checkbox] {
 		position: relative;
 		align-items: center;
 		justify-content: right;
-		width: 23px;
-		height: 17px;
+		width: 30px;
+		height: 22px;
 		z-index: 100;
 
 		// .header__burger::before, .header__burger::after
@@ -1297,7 +1309,7 @@ input[type=checkbox] {
 			height: 100vh;
 			flex-direction: column;
 			background: #000;
-			padding: 120px 7px 20px 42px;
+			padding: 120px 7px 20px 45px;
 			gap: 50px;
 			overflow-y: auto;
 			overflow-x: hidden;
@@ -1320,6 +1332,7 @@ input[type=checkbox] {
 			width: 800px;
 			height: 535px;
 			background: url(../img/content/burger-mist.png) center/contain no-repeat;
+			z-index: -1;
 		}
 
 		// .header__center
@@ -1498,6 +1511,11 @@ input[type=checkbox] {
 		text-decoration: underline;
 		text-underline-offset: 3px;
 		margin-bottom: 5px;
+
+		// .info-footer__mail:hover
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	// .info-footer__why
@@ -1505,6 +1523,11 @@ input[type=checkbox] {
 		font: 300 12px/1.25 'Proxima';
 		text-decoration: underline;
 		text-underline-offset: 3px;
+
+		// .info-footer__why:hover
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -1871,8 +1894,7 @@ input[type=checkbox] {
 		padding-bottom: 20px;
 	}
 
-	// .content__info,
-	// .content__video
+	// .content__info, ntent__video
 	&__info,
 	&__video {
 		width: calc(50% - 5px);
@@ -2297,6 +2319,7 @@ input[type=checkbox] {
 	border-radius: 10px;
 	padding: 20px 29px 25px;
 	text-align: center;
+	transition: all linear 0.2s;
 
 	// .card-cost__ibox
 	&__ibox {
@@ -2324,9 +2347,20 @@ input[type=checkbox] {
 		height: 14px;
 		filter: blur(17.5px);
 		border-radius: 12px;
-		opacity: 1;
+		opacity: 0;
 		pointer-events: none;
 		transition: all linear 0.2s;
+	}
+
+	// .card-cost:hover .card-cost__ibox::before
+	&:hover .card-cost__ibox::before {
+		opacity: 1;
+	}
+
+	// .card-cost_white:hover
+	&_white:hover {
+		background: #F3F3F3;
+		color: #000;
 	}
 
 	// .card-cost__ibox_1::before
@@ -2408,7 +2442,6 @@ input[type=checkbox] {
 		width: calc(33.33% - 20px);
 		border-radius: 20px;
 		padding: 33px 70px 35px;
-		transition: all linear 0.2s;
 		cursor: pointer;
 	
 		// .card-cost__ibox
@@ -2416,22 +2449,6 @@ input[type=checkbox] {
 			width: 90px;
 			height: 73px;
 			margin-bottom: 45px;
-		}
-	
-		// .card-cost__ibox::before
-		&__ibox::before {
-			opacity: 0;
-		}
-	
-		// .card-cost:hover .card-cost__ibox::before
-		&:hover .card-cost__ibox::before {
-			opacity: 1;
-		}
-
-		// .card-cost:hover
-		&_white:hover {
-			background: #F3F3F3;
-			color: #000;
 		}
 	
 		// .card-cost__title
@@ -2599,7 +2616,7 @@ input[type=checkbox] {
 		justify-content: center;
 		background: #fff;
 		overflow: hidden;
-		z-index: 2;
+		z-index: 10;
 		cursor: pointer;
 		transition: all linear 0.2s;
 
@@ -2678,7 +2695,6 @@ input[type=checkbox] {
 		background: #fff;
 		color: #000;
 		padding: 40px 20px;
-		border-radius: 10px;
 	}
 
 	// .owner-revolution__info

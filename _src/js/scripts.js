@@ -26,6 +26,17 @@ $('.main-menu__item_parent > a').on('click', function(e) {
 	$(this).toggleClass('_active');
 	$(this).parent().toggleClass('_active');
 	$(this).parent().find('.main-submenu').toggleClass('_active');
+
+	if ($('.header__content').hasClass('_active')) {
+		$('.main-menu__item').not($(this).parent()).toggle()
+	}
+})
+
+$('.main-submenu__link').on('click', function() {
+	
+	if ($('.main-menu__item_parent').hasClass('_active')) {
+		$('.main-menu__item_parent > a').trigger('click');
+	}
 })
 
 $(document).mouseup(function (e) {
@@ -320,13 +331,44 @@ $(document).mouseup(function (e) {
 	}
 });
 
-$('.owner-revolution').mouseenter(function() {
-	
-	$('.owner-revolution__overlay').addClass('_hide');
-}).mouseleave(function () {
+window.matchMedia('(max-width: 992px)').addEventListener('change', windowSize)
 
-	$('.owner-revolution__overlay').removeClass('_hide');
-})
+function windowSize(ma) {
+	if ((ma && ma.matches) || $(window).width() <= 992) {
+
+		$('.owner-revolution__overlay').on('click', function() {
+	
+			$(this).addClass('_hide');
+		})
+
+		$(document).mouseup(function (e) {
+			//Назва контейнеру
+			let container = $('.owner-revolution');
+			//Умова, щоб працювало тільки коли попап відкритий
+			if ($('.owner-revolution__overlay').hasClass('_hide')) {
+				//Умови при яких спрацює функція
+					//Якщо клікають не на посилання
+				if (!$("a").is(e.target)
+					//Якщо клік не на вікно попапу
+					&& !container.is(e.target)
+					//Якщо клік ......
+					&& container.has(e.target).length === 0) {
+					//Імітує клік на вказаний елемент
+					$('.owner-revolution__overlay').removeClass('_hide');
+				}
+			}
+		});
+	} else {
+
+		$('.owner-revolution').on('mouseenter', function() {
+	
+			$('.owner-revolution__overlay').addClass('_hide');
+		}).on('mouseleave', function () {
+		
+			$('.owner-revolution__overlay').removeClass('_hide');
+		})
+	}
+}windowSize();
 
 $('.info-footer__why').on('click', function(e) {
 	
