@@ -1352,11 +1352,16 @@ input[type=checkbox] {
 
 .partners-footer__ibox {
   max-height: 20px;
-  max-width: 65px;
+  max-width: 55px;
 }
 
 .partners-footer__ibox_tall {
   max-height: 38px;
+  max-width: 27px;
+}
+
+.partners-footer__ibox_long {
+  max-width: 73px;
 }
 
 .partners-footer__ibox img {
@@ -1364,6 +1369,8 @@ input[type=checkbox] {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
 
 .bot-footer__ibox {
@@ -4108,16 +4115,16 @@ input[type=checkbox] {
 
   .partners-footer__ibox {
     height: 35px;
+    max-width: 100px;
+  }
+
+  .partners-footer__ibox_long {
     max-width: 145px;
   }
 
   .partners-footer__ibox_tall {
     height: 75px;
-  }
-
-  .partners-footer__ibox img {
-    -o-object-position: bottom;
-       object-position: bottom;
+    max-width: 54px;
   }
 
   .bot-footer {
