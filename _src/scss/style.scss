@@ -5819,6 +5819,7 @@ input[type=checkbox] {
 			transition: all linear 0.2s;
 		}
 
+		// .spoiler-faq__name._active::before
 		&._active::before {
 			background: url(../img/faq/minus.svg) center/contain no-repeat;
 		}
@@ -5833,6 +5834,7 @@ input[type=checkbox] {
 		padding: 15px 22px 20px;
 		margin-top: 15px;
 
+		// .spoiler-faq__contant p:not(:last-child)
 		& p:not(:last-child) {
 			margin-bottom: 15px;
 		}

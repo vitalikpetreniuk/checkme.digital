@@ -88,6 +88,7 @@ $('.header__burger').on('click', function() {
 	$('.header__content').toggleClass('_active');
 	$('.side-links').toggleClass('_left');
 	$('body').toggleClass('_lock');
+	$('.ticker').toggleClass('_scroll');
 })
 
 $('.video-content__button').on('click', function () {
@@ -422,6 +423,8 @@ $(document).mouseup(function (e) {
 		if (!$("a").is(e.target)
 			//Якщо клік не на вікно попапу
 			&& !container.is(e.target)
+			//Якщо клік не на попап маски телефону
+			&& !$('.iti *').is(e.target)
 			//Якщо клік ......
 			&& container.has(e.target).length === 0) {
 			//Імітує клік на вказаний елемент
@@ -452,6 +455,14 @@ $(window).on('load', function() {
 		
 		$('#contact-phone').attr('placeholder', new_text)
 	})
+
+	if (!$('#contact-phone').val()) {
+
+		$('#contact-phone').on('focus', function() {
+
+			$(this).val('+');
+		})
+	}
 });
 
 $("._anchor").on('click', function(e) {
