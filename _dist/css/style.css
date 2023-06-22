@@ -1057,6 +1057,7 @@ input[type=checkbox] {
 }
 
 .main-menu__item {
+  position: relative;
   font: 300 14px/1.21 "Proxima";
 }
 

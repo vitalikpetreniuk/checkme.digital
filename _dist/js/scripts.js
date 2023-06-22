@@ -234,7 +234,7 @@ $('.nav-services__link').on('click', function(e) {
 	$('.nav-services__line span').css('width', $(this).data('line') + '%')
 })
 
-$('.main-submenu__link').on('click', function(e) {
+$('.main-submenu__link, .nav-footer__item a').on('click', function(e) {
 	
 	e.preventDefault();
 	$('.nav-services__link[data-id='+ $(this).data('id') +']').trigger('click');

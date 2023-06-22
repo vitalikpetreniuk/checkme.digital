@@ -1197,6 +1197,7 @@ input[type=checkbox] {
 
 	// .main-menu__item
 	&__item {
+		position: relative;
 		font: 300 14px/1.21 'Proxima';
 
 		&:hover {
