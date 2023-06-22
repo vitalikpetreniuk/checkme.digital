@@ -363,6 +363,10 @@ input[type=checkbox] {
 	&__text {
 		line-height: 1.4;
 		font: 100 14px/1.21 'Proxima';
+
+		& strong {
+			font-weight: 400;
+		}
 	}
 }
 
@@ -1352,11 +1356,6 @@ input[type=checkbox] {
 		// .header__burger
 		&__burger {
 			display: flex;
-		}
-
-		// .header__btn
-		&__btn {
-			display: none;
 		}
 
 		// .header__social
@@ -5833,6 +5832,10 @@ input[type=checkbox] {
 		border-radius: 20px;
 		padding: 15px 22px 20px;
 		margin-top: 15px;
+
+		& p:not(:last-child) {
+			margin-bottom: 15px;
+		}
 	}
 }
 

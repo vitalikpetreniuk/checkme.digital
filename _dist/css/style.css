@@ -450,6 +450,10 @@ input[type=checkbox] {
   font: 100 14px/1.21 "Proxima";
 }
 
+.intro__text strong {
+  font-weight: 400;
+}
+
 .social-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3511,6 +3515,10 @@ input[type=checkbox] {
   margin-top: 15px;
 }
 
+.spoiler-faq__contant p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 @media (min-width: 768px) {
   .intro {
     -webkit-box-orient: horizontal;
@@ -5168,10 +5176,6 @@ input[type=checkbox] {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-
-  .header__btn {
-    display: none;
   }
 
   .header__social {
