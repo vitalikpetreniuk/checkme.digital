@@ -206,9 +206,21 @@ body._lock {
 	}
 }
 
+h1 {
+	font: 700 34px/1.2 'SF-UI';
+}
+
 h2 {
 	font: 700 20px/1.15 'Raleway';
 	text-transform: uppercase;
+}
+
+h3 {
+	font: 700 24px/1.2 'SF-UI';
+}
+
+h4 {
+	font: 700 14px/1.42 'Proxima';
 }
 
 input[type=checkbox] {
@@ -412,6 +424,72 @@ input[type=checkbox] {
 .ticker-innovators__wrapper {
 	outline: none;
 	border: none;
+}
+
+.docs {
+
+	// .docs__cont
+	&__cont {
+		padding-top: 200px;
+		padding-bottom: 100px;
+	}
+
+	// .docs__top
+	&__top {
+		margin-bottom: 30px;
+	}
+
+	// .docs__subtitle
+	&__subtitle {
+		font: 300 14px/1.21 'SF-UI';
+		text-transform: uppercase;
+		margin-bottom: 6px;
+	}
+
+	// .docs__block
+	&__block {
+		margin-bottom: 30px;
+
+		// .docs__block h3
+		& h3 {
+			margin-bottom: 20px;
+		}
+
+		// .docs__block p
+		& p {
+			font: 300 14px/1.42 'Proxima';
+		}
+
+		// .docs__block p:not(:last-child)
+		& p:not(:last-child) {
+			margin-bottom: 15px;
+		}
+
+		// .docs__block ul
+		& ul {
+			margin-top: -15px;
+			margin-bottom: 20px;
+		}
+
+		// .docs__block ul li
+		& ul li {
+			position: relative;
+			font: 300 14px/1.42 'Proxima';
+			padding-left: 20px;
+		}
+
+		// .docs__block ul li::before
+		& ul li::before {
+			content: "";
+			position: absolute;
+			top: 5px;
+			left: 8px;
+			width: 3px;
+			height: 3px;
+			background: #fff;
+			border-radius: 50%;
+		}
+	}
 }
 
 @media (min-width: 768px) {
