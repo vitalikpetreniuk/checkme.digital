@@ -2146,6 +2146,11 @@ input[type=checkbox] {
 		&:hover {
 			text-decoration: none;
 		}
+
+		// .info-content__comment strong
+		& strong {
+			font-weight: 400;
+		}
 	}
 }
 
@@ -3459,11 +3464,6 @@ input[type=checkbox] {
 	// .team-features__col
 	&__col {
 		width: calc(50% - 10px);
-
-		// .team-features__col:last-child
-		&:last-child {
-			max-width: 180px;
-		}
 	}
 
 	// .team-features__title
@@ -3532,8 +3532,6 @@ input[type=checkbox] {
 			transform: translate(-50%, -50%);
 			width: 100%;
 			height: 100%;
-			max-width: 35px;
-			max-height: 25px;
 		}
 
 		// .team-tabs__content#certifications .team-tabs__ibox
@@ -3667,12 +3665,6 @@ input[type=checkbox] {
 	
 		// .team-tabs__content
 		&__content {
-	
-			// .team-tabs__content#brands .team-tabs__ibox
-			&#brands .team-tabs__ibox {
-				max-width: 45px;
-				max-height: 35px;
-			}
 	
 			// .team-tabs__content#certifications .team-tabs__ibox
 			&#certifications .team-tabs__ibox {
@@ -3825,12 +3817,6 @@ input[type=checkbox] {
 		// .team-tabs__content
 		&__content {
 	
-			// .team-tabs__content#brands .team-tabs__ibox
-			&#brands .team-tabs__ibox {
-				max-width: 50px;
-				max-height: 35px;
-			}
-	
 			// .team-tabs__content#certifications .team-tabs__ibox
 			&#certifications .team-tabs__ibox {
 				width: 45px;
@@ -3895,6 +3881,24 @@ input[type=checkbox] {
 			&_right {
 				right: -56px;
 			}
+		}
+	}
+
+	.team-tabs {
+	
+		// .team-tabs__content
+		&__content {
+
+			// .team-tabs__content#brands .team-tabs__item
+			&#brands .team-tabs__item {
+				width: calc(10% - 63px);
+			}
+		}
+
+		// .team-tabs__list
+		&__list {
+			column-gap: 70px;
+			row-gap: 25px;
 		}
 	}
 }
@@ -4138,9 +4142,11 @@ input[type=checkbox] {
 	
 	.item-consult {
 	
+		// .item-consult._active
 		&._active {
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 			gap: 30px;
 		}
 	
@@ -4152,6 +4158,7 @@ input[type=checkbox] {
 		// .item-consult__content
 		&__content {
 			column-gap: 40px;
+			flex: 1 1 auto;
 		}
 	
 		// .item-consult__submit
@@ -4159,7 +4166,7 @@ input[type=checkbox] {
 	
 			// .item-consult__submit_dt
 			&_dt {
-				display: block;
+				display: inline-block;
 				margin: 0;
 			}
 	
@@ -4462,6 +4469,7 @@ input[type=checkbox] {
 		// .item-services._active
 		&._active {
 			display: flex;
+			align-items: flex-start;
 			gap: 30px;
 		}
 
@@ -5159,6 +5167,7 @@ input[type=checkbox] {
 		&__text {
 			margin-bottom: 45px;
 			max-width: 520px;
+			min-height: 40px;
 		}
 	
 		// .item-how-work__inbox
