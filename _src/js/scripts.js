@@ -183,6 +183,13 @@ if($('.swiper').length) {
 	});
 }
 
+$('.team-features__more').on('click', function() {
+	
+	// $(this).parent().find('')
+	$(this).prev().toggleClass('_active');
+	slider_team.updateAutoHeight();
+})
+
 $('.team-tabs__link').on('click', function(e) {
 	
 	e.preventDefault();

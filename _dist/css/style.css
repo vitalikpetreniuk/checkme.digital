@@ -936,7 +936,7 @@ input[type=checkbox] {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 116px;
           flex: 0 0 116px;
-  margin-right: 90px;
+  margin-right: 60px;
   z-index: 100;
 }
 
@@ -979,7 +979,7 @@ input[type=checkbox] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 50px;
+  gap: 30px;
   font: 500 14px/1.21 "Proxima", sans-serif;
 }
 
@@ -1115,9 +1115,9 @@ input[type=checkbox] {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 50px;
-     -moz-column-gap: 50px;
-          column-gap: 50px;
+  -webkit-column-gap: 35px;
+     -moz-column-gap: 35px;
+          column-gap: 35px;
   row-gap: 10px;
 }
 
@@ -2441,6 +2441,20 @@ input[type=checkbox] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 6px;
+  max-height: 100px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.team-features__list._active {
+  max-height: none;
+}
+
+.team-features__more {
+  padding: 5px 10px;
 }
 
 .team-features__item {
@@ -2504,6 +2518,7 @@ input[type=checkbox] {
 }
 
 .team-tabs__content#certifications .team-tabs__ibox {
+  display: block;
   width: 35px;
   height: 35px;
   margin: 0 auto;
@@ -3534,14 +3549,11 @@ input[type=checkbox] {
   font: 100 14px/1.42 "Proxima";
 }
 
-.faq__spoiler:not(:last-child) {
-  margin-bottom: 25px;
-}
-
 .spoiler-faq {
   font: 300 14px/1.5 "Proxima";
   border-bottom: 1px solid #ffffff66;
   padding-bottom: 15px;
+  margin-bottom: 25px;
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
@@ -3746,6 +3758,10 @@ input[type=checkbox] {
     font-size: 16px;
   }
 
+  .team-features__list {
+    max-height: 105px;
+  }
+
   .team-tabs__link {
     font-size: 16px;
   }
@@ -3919,6 +3935,10 @@ input[type=checkbox] {
     margin-bottom: 0;
   }
 
+  .focus__text {
+    font-size: 28px;
+  }
+
   .focus__content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3937,10 +3957,6 @@ input[type=checkbox] {
 
   .item-focus {
     padding: 20px 25px 20px 35px;
-  }
-
-  .focus__text {
-    font-size: 28px;
   }
 
   .serve {
@@ -4073,6 +4089,15 @@ input[type=checkbox] {
   .card-cost__title {
     font-size: 24px;
     margin-bottom: 12px;
+  }
+
+  .team-features__list {
+    max-height: none;
+    margin-bottom: 0;
+  }
+
+  .team-features__more {
+    display: none;
   }
 }
 
@@ -4693,6 +4718,10 @@ input[type=checkbox] {
     row-gap: 5px;
   }
 
+  .focus__title {
+    font-size: 34px;
+  }
+
   .focus__item {
     width: calc(25% - 30px);
   }
@@ -4779,22 +4808,20 @@ input[type=checkbox] {
   }
 
   .faq__content {
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-column-gap: 30px;
        -moz-column-gap: 30px;
             column-gap: 30px;
   }
 
-  .faq__spoiler:not(:last-child) {
-    margin-bottom: 25px;
+  .faq__col {
+    width: calc(50% - 15px);
   }
 
-  .spoiler-faq {
-    -webkit-column-break-inside: avoid;
-       -moz-column-break-inside: avoid;
-            break-inside: avoid;
+  .faq__spoiler:not(:last-child) {
+    margin-bottom: 25px;
   }
 }
 
