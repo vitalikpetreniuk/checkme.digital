@@ -528,6 +528,7 @@ input[type=checkbox] {
 }
 
 .docs__subtitle {
+  display: none;
   font: 300 14px/1.21 "SF-UI";
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -569,6 +570,76 @@ input[type=checkbox] {
   height: 3px;
   background: #fff;
   border-radius: 50%;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader._active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.loader__box {
+  position: relative;
+  width: 80%;
+  height: 10px;
+}
+
+.loader__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: -o-linear-gradient(177.76deg, #e1007a 11.77%, #f19300 67.94%);
+  background: linear-gradient(272.24deg, #e1007a 11.77%, #f19300 67.94%);
+  border-radius: 5px;
+  -webkit-animation: 3s ease-in-out 1 forwards load;
+          animation: 3s ease-in-out 1 forwards load;
+}
+
+@-webkit-keyframes load {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes load {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 .freaks {
@@ -1417,6 +1488,7 @@ input[type=checkbox] {
 }
 
 .partners-footer__ibox {
+  display: block;
   max-height: 20px;
   max-width: 55px;
 }
@@ -1516,7 +1588,6 @@ input[type=checkbox] {
 
 .info-content__title {
   font: 700 30px/1.2 "Raleway";
-  max-width: 500px;
   margin-bottom: 11px;
 }
 
@@ -1965,6 +2036,12 @@ input[type=checkbox] {
   opacity: 1;
 }
 
+.lvl-overlay._active .lvl-overlay__button {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .lvl-overlay__ibox {
   position: absolute;
   top: 0;
@@ -2004,6 +2081,22 @@ input[type=checkbox] {
   width: 10px;
   height: 10px;
   background: url(../img/revolution/text-ico.svg) center/contain no-repeat;
+}
+
+.lvl-overlay__button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font: 300 14px/1.21 "Proxima";
+  text-transform: uppercase;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: -o-linear-gradient(130deg, #e1007a 11.77%, #f19300 100%);
+  background: linear-gradient(320deg, #e1007a 11.77%, #f19300 100%);
 }
 
 .owner-revolution {
@@ -4091,6 +4184,10 @@ input[type=checkbox] {
     margin-bottom: 12px;
   }
 
+  .lvl-overlay__button {
+    display: none;
+  }
+
   .team-features__list {
     max-height: none;
     margin-bottom: 0;
@@ -4597,6 +4694,14 @@ input[type=checkbox] {
             flex: 1 1 auto;
   }
 
+  .item-consult__text {
+    height: 60px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   .item-consult__submit_dt {
     display: inline-block;
     margin: 0;
@@ -4644,6 +4749,14 @@ input[type=checkbox] {
         -ms-flex-align: start;
             align-items: flex-start;
     margin-top: 30px;
+  }
+
+  .item-services__text {
+    height: 80px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .item-services__submit {
@@ -4911,6 +5024,16 @@ input[type=checkbox] {
 
   .team-tabs__content#brands .team-tabs__item {
     width: calc(10% - 63px);
+  }
+
+  .team-tabs__content#certifications .team-tabs__list {
+    -webkit-column-gap: 72px;
+       -moz-column-gap: 72px;
+            column-gap: 72px;
+  }
+
+  .team-tabs__content#certifications .team-tabs__item {
+    width: calc(11.11% - 64px);
   }
 
   .team-tabs__list {
@@ -5353,7 +5476,6 @@ input[type=checkbox] {
 
   .info-content__title {
     font-size: 22px;
-    max-width: 335px;
     margin-bottom: 7px;
   }
 

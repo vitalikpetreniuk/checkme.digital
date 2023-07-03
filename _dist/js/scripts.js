@@ -1,14 +1,34 @@
 var $ = jQuery;
 
+let page_loaded = false
+let loader_interval = setInterval(function() {
+	
+	if (page_loaded == true) {
+		$('.loader').removeClass('_active');
+		clearInterval(loader_interval);
+	}
+	
+}, 1000);
+
 $(function() {
 
-	if ($('.ticker').length) {
-		$('.ticker').marquee({
-			line: '.ticker__wrapper',
-			animSpeed: 50,
-			pauseOnHover: false,
-		});
-	}
+page_loaded = true
+
+if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != undefined) {
+
+	setTimeout(function() {
+		$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
+		sessionStorage.removeItem('anchor')
+	},500)
+}
+
+if ($('.ticker').length) {
+	$('.ticker').marquee({
+		line: '.ticker__wrapper',
+		animSpeed: 50,
+		pauseOnHover: false,
+	});
+}
 
 let scrollPos = 0;
 $(window).scroll(function () {
@@ -131,14 +151,6 @@ function animateText() {
 	},text_show_timer); 
 }animateText()
 
-$('.lvl-revolution').mouseenter(function () {
-
-	$(this).find('.lvl-overlay').addClass('_active');
-}).mouseleave(function () {
-
-	$(this).find('.lvl-overlay').removeClass('_active');
-})
-
 if ($('.flickity').length) {
 
 	let tickerSpeed = 1;
@@ -184,8 +196,7 @@ if($('.swiper').length) {
 }
 
 $('.team-features__more').on('click', function() {
-	
-	// $(this).parent().find('')
+
 	$(this).prev().toggleClass('_active');
 	slider_team.updateAutoHeight();
 })
@@ -357,11 +368,17 @@ function windowSize(ma) {
 			$(this).addClass('_hide');
 		})
 
+		$('.lvl-overlay__button').on('click', function() {
+			
+			// $('.lvl-overlay').removeClass('_active');
+			$(this).parent('.lvl-overlay').addClass('_active');
+		})
+
 		$(document).mouseup(function (e) {
 			//Назва контейнеру
-			let container = $('.owner-revolution');
+			let container = $('.owner-revolution, .lvl-overlay');
 			//Умова, щоб працювало тільки коли попап відкритий
-			if ($('.owner-revolution__overlay').hasClass('_hide')) {
+			if ($('.owner-revolution__overlay').hasClass('_hide') || $('.lvl-overlay').hasClass('_active')) {
 				//Умови при яких спрацює функція
 					//Якщо клікають не на посилання
 				if (!$("a").is(e.target)
@@ -371,6 +388,7 @@ function windowSize(ma) {
 					&& container.has(e.target).length === 0) {
 					//Імітує клік на вказаний елемент
 					$('.owner-revolution__overlay').removeClass('_hide');
+					$('.lvl-overlay').removeClass('_active');
 				}
 			}
 		});
@@ -382,6 +400,14 @@ function windowSize(ma) {
 		}).on('mouseleave', function () {
 		
 			$('.owner-revolution__overlay').removeClass('_hide');
+		})
+		
+		$('.lvl-revolution').mouseenter(function () {
+
+			$(this).find('.lvl-overlay').addClass('_active');
+		}).mouseleave(function () {
+		
+			$(this).find('.lvl-overlay').removeClass('_active');
 		})
 	}
 }windowSize();
@@ -478,19 +504,39 @@ $(window).on('load', function() {
 $("._anchor").on('click', function(e) {
 
 	let target;
-
 	e.preventDefault();
-	if ($(this).attr('href')) {
 
-		target = $(this).attr('href');
-		if ($('.header__content').hasClass('_active')) {
-			$('.header__burger').trigger('click');
+	if (window.location.pathname === '/') {
+	
+		if ($(this).attr('href')) {
+	
+			target = $(this).attr('href');
+			if ($('.header__content').hasClass('_active')) {
+				$('.header__burger').trigger('click');
+			}
+			$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
+		} else {
+	
+			target = $(this).data('anchor');
+			$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
 		}
-		$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
+		
 	} else {
+	
+		if ($(this).attr('href')) {
+	
+			target = $(this).attr('href');
+			if ($('.header__content').hasClass('_active')) {
+				$('.header__burger').trigger('click');
+			}
+			sessionStorage.setItem("anchor", target);
 
-		target = $(this).data('anchor');
-		$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
+		} else {
+	
+			target = $(this).data('anchor');
+			sessionStorage.setItem("anchor", target);
+			window.location.pathname = '/'
+		}
 	}
 	
 });
