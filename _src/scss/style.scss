@@ -2798,7 +2798,7 @@ input[type=checkbox] {
 			content: "";
 			position: absolute;
 			top: calc(50% - -47px);
-			left: -240px;
+			left: -256px;
 			transform: translateY(-50%);
 			width: 400px;
 			height: 150px;
@@ -2810,7 +2810,7 @@ input[type=checkbox] {
 			content: "";
 			position: absolute;
 			top: calc(50% - 26px);
-			right: -174px;
+			right: -193px;
 			transform: translateY(-50%);
 			width: 350px;
 			height: 155px;
@@ -2850,8 +2850,8 @@ input[type=checkbox] {
 
 		// .owner-revolution__item button
 		& button {
-			width: 24px;
-			height: 24px;
+			// width: 24px;
+			// height: 24px;
 			background: linear-gradient(320deg, #E1007A 11.77%, #F19300 100%);
 			border-radius: 50%;
 		}
@@ -2966,14 +2966,14 @@ input[type=checkbox] {
 	
 			// .owner-revolution__overlay::before
 			&::before {
-				left: -149px;
+				left: -158px;
 				width: 500px;
 				height: 187px;
 			}
 	
 			// .owner-revolution__overlay::after
 			&::after {
-				right: -80px;
+				right: -88px;
 				width: 450px;
 				height: 177px;
 			}
@@ -2989,8 +2989,8 @@ input[type=checkbox] {
 	
 			// .owner-revolution__item button
 			& button {
-				width: 30px;
-				height: 30px;
+				// width: 30px;
+				// height: 30px;
 			}
 		}
 	}
@@ -3101,8 +3101,8 @@ input[type=checkbox] {
 	
 			// .owner-revolution__item button
 			& button {
-				width: 45px;
-				height: 45px;
+				// width: 45px;
+				// height: 45px;
 			}
 		}
 
@@ -3171,7 +3171,7 @@ input[type=checkbox] {
 	
 			// .owner-revolution__overlay::before
 			&::before {
-				left: -123px;
+				left: -157px;
 				top: 72%;
 				width: 750px;
 				height: 280px;
@@ -3179,7 +3179,7 @@ input[type=checkbox] {
 	
 			// .owner-revolution__overlay::after
 			&::after {
-				right: 5px;
+				right: -33px;
 				top: 31%;
 				width: 653px;
 				height: 290px;

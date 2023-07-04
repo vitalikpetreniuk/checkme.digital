@@ -2143,7 +2143,7 @@ input[type=checkbox] {
   content: "";
   position: absolute;
   top: calc(50% + 47px);
-  left: -240px;
+  left: -256px;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -2156,7 +2156,7 @@ input[type=checkbox] {
   content: "";
   position: absolute;
   top: calc(50% - 26px);
-  right: -174px;
+  right: -193px;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -2194,8 +2194,6 @@ input[type=checkbox] {
 }
 
 .owner-revolution__item button {
-  width: 24px;
-  height: 24px;
   background: -o-linear-gradient(130deg, #E1007A 11.77%, #F19300 100%);
   background: linear-gradient(320deg, #E1007A 11.77%, #F19300 100%);
   border-radius: 50%;
@@ -3771,24 +3769,19 @@ input[type=checkbox] {
   }
 
   .owner-revolution__overlay::before {
-    left: -149px;
+    left: -158px;
     width: 500px;
     height: 187px;
   }
 
   .owner-revolution__overlay::after {
-    right: -80px;
+    right: -88px;
     width: 450px;
     height: 177px;
   }
 
   .owner-revolution__item p {
     font-size: 20px;
-  }
-
-  .owner-revolution__item button {
-    width: 30px;
-    height: 30px;
   }
 
   .introdusing__top {
@@ -4396,11 +4389,6 @@ input[type=checkbox] {
     font-size: 34px;
   }
 
-  .owner-revolution__item button {
-    width: 45px;
-    height: 45px;
-  }
-
   .owner-revolution__content {
     padding: 75px 60px;
     border-radius: 20px;
@@ -4960,14 +4948,14 @@ input[type=checkbox] {
   }
 
   .owner-revolution__overlay::before {
-    left: -123px;
+    left: -157px;
     top: 72%;
     width: 750px;
     height: 280px;
   }
 
   .owner-revolution__overlay::after {
-    right: 5px;
+    right: -33px;
     top: 31%;
     width: 653px;
     height: 290px;

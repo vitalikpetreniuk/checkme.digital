@@ -13,11 +13,12 @@ let loader_interval = setInterval(function() {
 $(function() {
 
 page_loaded = true
+let lang = $('html').attr('lang')
 
-if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != undefined) {
+if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != undefined || window.location.pathname === '/' + lang + '/' && sessionStorage.getItem('anchor') != undefined) {
 
 	setTimeout(function() {
-		$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
+		$('html').animate({scrollTop: $(sessionStorage.getItem('anchor')).offset().top - $('.header').height() - 15}, 500);
 		sessionStorage.removeItem('anchor')
 	},500)
 }
@@ -368,17 +369,17 @@ function windowSize(ma) {
 			$(this).addClass('_hide');
 		})
 
-		$('.lvl-overlay__button').on('click', function() {
+		// $('.lvl-overlay__button').on('click', function() {
 			
-			// $('.lvl-overlay').removeClass('_active');
-			$(this).parent('.lvl-overlay').addClass('_active');
-		})
+		// 	// $('.lvl-overlay').removeClass('_active');
+		// 	$(this).parent('.lvl-overlay').addClass('_active');
+		// })
 
 		$(document).mouseup(function (e) {
 			//Назва контейнеру
-			let container = $('.owner-revolution, .lvl-overlay');
+			let container = $('.owner-revolution');
 			//Умова, щоб працювало тільки коли попап відкритий
-			if ($('.owner-revolution__overlay').hasClass('_hide') || $('.lvl-overlay').hasClass('_active')) {
+			if ($('.owner-revolution__overlay').hasClass('_hide')) {
 				//Умови при яких спрацює функція
 					//Якщо клікають не на посилання
 				if (!$("a").is(e.target)
@@ -388,7 +389,6 @@ function windowSize(ma) {
 					&& container.has(e.target).length === 0) {
 					//Імітує клік на вказаний елемент
 					$('.owner-revolution__overlay').removeClass('_hide');
-					$('.lvl-overlay').removeClass('_active');
 				}
 			}
 		});
@@ -401,16 +401,16 @@ function windowSize(ma) {
 		
 			$('.owner-revolution__overlay').removeClass('_hide');
 		})
-		
-		$('.lvl-revolution').mouseenter(function () {
-
-			$(this).find('.lvl-overlay').addClass('_active');
-		}).mouseleave(function () {
-		
-			$(this).find('.lvl-overlay').removeClass('_active');
-		})
 	}
 }windowSize();
+
+$('.lvl-revolution').mouseenter(function () {
+
+	$(this).find('.lvl-overlay').addClass('_active');
+}).mouseleave(function () {
+
+	$(this).find('.lvl-overlay').removeClass('_active');
+})
 
 $('.info-footer__why').on('click', function(e) {
 	
@@ -506,7 +506,7 @@ $("._anchor").on('click', function(e) {
 	let target;
 	e.preventDefault();
 
-	if (window.location.pathname === '/') {
+	if (window.location.pathname === '/' || window.location.pathname === '/' + lang + '/') {
 	
 		if ($(this).attr('href')) {
 	
@@ -526,19 +526,17 @@ $("._anchor").on('click', function(e) {
 		if ($(this).attr('href')) {
 	
 			target = $(this).attr('href');
-			if ($('.header__content').hasClass('_active')) {
-				$('.header__burger').trigger('click');
-			}
 			sessionStorage.setItem("anchor", target);
+			window.location.pathname = '/' + lang + '/';
 
 		} else {
 	
 			target = $(this).data('anchor');
 			sessionStorage.setItem("anchor", target);
-			window.location.pathname = '/'
+			window.location.pathname = '/' + lang + '/';
 		}
 	}
-	
+	console.log(target);
 });
 
 })
