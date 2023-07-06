@@ -4,24 +4,94 @@ let page_loaded = false
 let loader_interval = setInterval(function() {
 	
 	if (page_loaded == true) {
+		// $('body').removeClass('_lock');
 		$('.loader').removeClass('_active');
 		clearInterval(loader_interval);
 	}
 	
 }, 1000);
 
+
+// $(window).on('load', function() {
+
+	// page_loaded = true
+// });
+
+$('.loader__line').on('animationend', function() {
+	
+	// $('body').removeClass('_lock');
+	$('.loader').removeClass('_active');
+})
+
 $(function() {
 
-page_loaded = true
+	page_loaded = true
+
 let lang = $('html').attr('lang')
 
 if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != undefined || window.location.pathname === '/' + lang + '/' && sessionStorage.getItem('anchor') != undefined) {
 
 	setTimeout(function() {
-		$('html').animate({scrollTop: $(sessionStorage.getItem('anchor')).offset().top - $('.header').height() - 15}, 500);
+		if ($('.header__ticker').hasClass('_scroll')) {
+			$('html').animate({scrollTop: $(sessionStorage.getItem('anchor')).offset().top - $('.header').height()}, 500);
+		} else {
+			$('html').animate({scrollTop: $(sessionStorage.getItem('anchor')).offset().top - $('.header').height() + 37}, 500);
+		}
 		sessionStorage.removeItem('anchor')
 	},500)
 }
+
+$("._anchor").on('click', function(e) {
+
+	let target;
+	e.preventDefault();
+
+	if ($('.main-menu__item_parent').hasClass('_active')) {
+
+		$('.main-menu__item_parent a').trigger('click');
+	}
+
+	if (window.location.pathname === '/' || window.location.pathname === '/' + lang + '/') {
+	
+		if ($(this).attr('href')) {
+	
+			target = $(this).attr('href');
+			if ($('.header__content').hasClass('_active')) {
+				$('.header__burger').trigger('click');
+			}
+			
+			if ($('.header__ticker').hasClass('_scroll')) {
+				$('html').animate({scrollTop: $(target).offset().top - $('.header').height()}, 500);
+			} else {
+				$('html').animate({scrollTop: $(target).offset().top - $('.header').height() + 37}, 500);
+			}
+		} else {
+	
+			target = $(this).data('anchor');
+			
+			if ($('.header__ticker').hasClass('_scroll')) {
+				$('html').animate({scrollTop: $(target).offset().top - $('.header').height()}, 500);
+			} else {
+				$('html').animate({scrollTop: $(target).offset().top - $('.header').height() + 37}, 500);
+			}
+		}
+		
+	} else {
+	
+		if ($(this).attr('href')) {
+	
+			target = $(this).attr('href');
+			sessionStorage.setItem("anchor", target);
+			window.location.pathname = '/' + lang + '/';
+
+		} else {
+	
+			target = $(this).data('anchor');
+			sessionStorage.setItem("anchor", target);
+			window.location.pathname = '/' + lang + '/';
+		}
+	}
+});
 
 if ($('.ticker').length) {
 	$('.ticker').marquee({
@@ -196,7 +266,24 @@ if($('.swiper').length) {
 	});
 }
 
+let slide_height = $('.slider-team__slide:first-child .team-slide__box').height();
+$('.slider-team__slide:not(:first-child) .team-slide__box').height(slide_height)
+$(window).on('resize', function() {
+
+	slide_height = $('.slider-team__slide:first-child .team-slide__box').height();
+
+	$('.slider-team__slide:not(:first-child) .team-slide__box').height(slide_height)
+	slider_team.updateAutoHeight();
+})
+
 $('.team-features__more').on('click', function() {
+
+	setTimeout(function() {
+	
+		slide_height = $('.slider-team__slide:first-child .team-slide__box').height();
+		$('.slider-team__slide:not(:first-child) .team-slide__box').height(slide_height)
+		slider_team.updateAutoHeight();
+	}, 100);
 
 	$(this).prev().toggleClass('_active');
 	slider_team.updateAutoHeight();
@@ -499,44 +586,6 @@ $(window).on('load', function() {
 			$(this).val('+');
 		})
 	}
-});
-
-$("._anchor").on('click', function(e) {
-
-	let target;
-	e.preventDefault();
-
-	if (window.location.pathname === '/' || window.location.pathname === '/' + lang + '/') {
-	
-		if ($(this).attr('href')) {
-	
-			target = $(this).attr('href');
-			if ($('.header__content').hasClass('_active')) {
-				$('.header__burger').trigger('click');
-			}
-			$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
-		} else {
-	
-			target = $(this).data('anchor');
-			$('html').animate({scrollTop: $(target).offset().top - $('.header').height() - 15}, 500);
-		}
-		
-	} else {
-	
-		if ($(this).attr('href')) {
-	
-			target = $(this).attr('href');
-			sessionStorage.setItem("anchor", target);
-			window.location.pathname = '/' + lang + '/';
-
-		} else {
-	
-			target = $(this).data('anchor');
-			sessionStorage.setItem("anchor", target);
-			window.location.pathname = '/' + lang + '/';
-		}
-	}
-	console.log(target);
 });
 
 })
